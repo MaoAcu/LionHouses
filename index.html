@@ -47,7 +47,7 @@
     </div>
     
     <div class="intro-text">
-        <p>Casa en renta · Ubicación privilegiada</p>
+        <p>Lions Houses· Your Refuge in the Sea</p>
     </div>
 </section>
     <nav class="navbar" data-aos="fade-down" data-aos-duration="800" data-aos-delay="500">
@@ -148,13 +148,13 @@
             <span class="marquee-item" data-i18n="marquee.noStress">★ NO ACEPTAMOS ESTRÉS</span>
             <span class="marquee-item" data-i18n="marquee.fastWifi">★ WIFI MÁS RÁPIDO QUE TU JEFE</span>
             <span class="marquee-item" data-i18n="marquee.sunsets">★ ATARDECERES INCLUIDOS</span>
-            <span class="marquee-item" data-i18n="marquee.pool">★ PISCINA ANTI-PROBLEMAS</span>
+            <span class="marquee-item" data-i18n="marquee.pool">★ JARDIN PARA TUS MOMENTOS ZEN</span>
 
           
             <span class="marquee-item" data-i18n="marquee.noStress">★ NO ACEPTAMOS ESTRÉS</span>
             <span class="marquee-item" data-i18n="marquee.fastWifi">★ WIFI MÁS RÁPIDO QUE TU JEFE</span>
             <span class="marquee-item" data-i18n="marquee.sunsets">★ ATARDECERES INCLUIDOS</span>
-            <span class="marquee-item" data-i18n="marquee.pool">★ PISCINA ANTI-PROBLEMAS</span>
+            <span class="marquee-item" data-i18n="marquee.pool">★ JARDIN PARA TUS MOMENTOS ZEN</span>
         </div>
     </div>
 </section>
@@ -244,8 +244,8 @@
 
         <div class="feature-card" data-aos="flip-right" data-aos-delay="200">
             <div class="feature-icon">☀️</div>
-            <h3 class="feature-title" data-i18n="features.features.pool.title">Piscina</h3>
-            <p class="feature-desc" data-i18n="features.features.pool.desc">Pequeña pero cumplidora.</p>
+            <h3 class="feature-title" data-i18n="features.features.pool.title">Jardin</h3>
+            <p class="feature-desc" data-i18n="features.features.pool.desc">Pequeño pero cumplidora.</p>
         </div>
 
         <div class="feature-card" data-aos="flip-right" data-aos-delay="300">
@@ -302,7 +302,7 @@
             <div class="gallery-item" data-image="Lion_Houses_living_room.jpeg" data-label="LA SALA"  
                 data-aos="fade-up" 
                 data-aos-delay="200"
-                data-aos-anchor-placement="top-bottom">>
+                data-aos-anchor-placement="top-bottom">
                 <div class="gallery-image" style="background-image: url('images/Lion_Houses_living_room.jpeg');"></div>
                 <div class="gallery-overlay">
                     <span class="gallery-label">LA SALA</span>
@@ -322,7 +322,7 @@
                 </div>
             </div>
             
-            <div class="gallery-item" data-image="Lion_Houses_kitchen.jpeg" data-label="LA POZA" 
+            <div class="gallery-item" data-image="Lion_Houses_kitchen.jpeg" data-label="Cocina" 
                 data-aos="fade-up" 
                 data-aos-delay="400"
                 data-aos-anchor-placement="top-bottom"> 
@@ -567,60 +567,27 @@
 
         <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Inicializar AOS después de que la animación intro termine
-       document.addEventListener('DOMContentLoaded', function() {
-    // Esperar a que termine la animación de entrada
-    setTimeout(function() {
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                // Configuración personalizada
-                duration: 1000, // Duración de la animación en ms
-                once: true, //   animación solo ocurre una vez
-                offset: 100, // Offset (px) desde el borde inferior de la ventana
-                delay: 0, // Retardo entre animaciones
-                easing: 'ease-out-cubic', // Curva de aceleración
-                
-                // Optimización para móviles
-                disable: function() {
-                    // Solo deshabilitar en móviles MUY pequeños
-                    var maxWidth = 360;
-                    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-                    return window.innerWidth < maxWidth && isMobile;
-                },
-                
-                // Configuraciones de AOS
-                startEvent: 'DOMContentLoaded',
-                initClassName: 'aos-init',
-                animatedClassName: 'aos-animate',
-                useClassNames: false,
-                disableMutationObserver: false,
-                debounceDelay: 50,
-                throttleDelay: 99,
-                
-                
-            });
-            
-            console.log('AOS inicializado después de animación intro');
-            
-            // Refrescar AOS cuando cambia el idioma
-            document.addEventListener('languageChanged', function() {
-                setTimeout(function() {
-                    AOS.refresh();
-                }, 300);
-            });
-            
-            
-            setTimeout(function() {
-                AOS.refresh();
-            }, 1000);
-            
-        } else {
-            console.warn('AOS no está cargado');
-        }
-    }, 4000); //   4 segundos para que termine la animación intro (antes tenías 500ms)
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  AOS.init({
+    duration: 900,
+    once: true,
+    offset: 120,
+    easing: 'ease-out-cubic',
+    disable: false
+  });
+
+  // Cuando termina la intro
+  setTimeout(() => {
+    AOS.refreshHard();
+  }, 4000);
+
+  document.addEventListener('languageChanged', () => {
+    setTimeout(() => AOS.refresh(), 300);
+  });
 });
-    </script>
+</script>
     <script>
 document.addEventListener("click", e => {
     if (e.target.classList.contains("lang-flag")) {
