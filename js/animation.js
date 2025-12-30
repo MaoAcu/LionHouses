@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const animationConfig = {
         desktop: {
             imageScale: 1.1,
-            zoomScale: 2.8,
+            zoomScale: 3.2,
             zoomY: "-25%",
             zoomX: "2%",
-            duration: 1.8,
+            duration: 2.0,
             zoomDuration: 2.5,
             containerWidth: "80%",
             containerHeight: "70vh"
