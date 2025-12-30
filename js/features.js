@@ -27,7 +27,7 @@ function initLightbox() {
             const imgSrc = this.getAttribute('data-image');
             const label = this.getAttribute('data-label');
             
-            lightboxImg.src = `/static/images/${imgSrc}`;
+            lightboxImg.src = `/images/${imgSrc}`;
             lightboxCaption.textContent = label;
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
