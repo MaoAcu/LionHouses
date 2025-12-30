@@ -1,0 +1,35 @@
+{
+  "contact": {
+    "label": "CONTACT US",
+    "title": "Any existential questions?",
+    "description": "Are you a family looking for peace? A group of friends seeking responsible fun? Or simply someone who hates hotels? Write to us.",
+
+    "whatsappBtn": "CHAT ON WHATSAPP",
+    "email": "info@lionshouses.com",
+
+    "quickQuestion": {
+      "title": "Quick Question",
+      "placeholder": "Anything specific you want to know?",
+      "button": "Send question"
+    },
+
+    "form": {
+      "nameLabel": "FIRST NAME",
+      "namePlaceholder": "Your name",
+
+      "lastNameLabel": "LAST NAME",
+      "lastNamePlaceholder": "Your last name",
+
+      "emailLabel": "EMAIL",
+      "emailPlaceholder": "your@email.com",
+
+      "datesLabel": "DATES OF INTEREST",
+      "datesPlaceholder": "e.g. March 15–20",
+
+      "messageLabel": "MESSAGE",
+      "messagePlaceholder": "Tell us about your plans...",
+
+      "sendBtn": "SEND MESSAGE"
+    }
+  }
+}

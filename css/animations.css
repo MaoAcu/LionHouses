@@ -1,0 +1,258 @@
+/* styles.css - Sección para la animación de entrada */
+
+/* INTRO ANIMADA - CONTAINER */
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Más alto que todo */
+    background-color: #0f172a;
+    overflow: hidden;
+}
+
+/* Contenedor de la imagen para limitar tamaño */
+.image-container {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    height: 70vh;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Imagen aérea */
+#aerial {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center center;
+}
+
+/* Texto de introducción */
+.intro-text {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+}
+
+.intro-text h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* Indicador de carga */
+.loader {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 11;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #3b82f6;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+    background-color: #8b5cf6;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+    background-color: #10b981;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Efecto de borde sutil en contenedor de imagen */
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #10b981, #3b82f6);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(10px);
+}
+
+/* Responsive para la animación */
+@media (max-width: 768px) {
+    .image-container {
+        width: 90%;
+        height: 60vh;
+    }
+    
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+    
+    .intro-text p {
+        font-size: 1rem;
+    }
+}
+
+/* Asegurarse de que el navbar esté detrás de la animación inicialmente */
+.navbar {
+    position: relative;
+    z-index: 1000; /* Menor que #intro */
+}
+
+@media (max-width: 768px) {
+    #intro {
+        /* Asegurar que ocupe toda la pantalla en móvil */
+        height: 100dvh; /* Usar dvh para mejor compatibilidad móvil */
+        position: fixed;
+        z-index: 9999;
+    }
+    
+    .image-container {
+        width: 95% !important;
+        height: 50vh !important;
+        max-height: 400px;
+        border-radius: 12px;
+        box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.8);
+    }
+    
+    .intro-text {
+        padding: 1.2rem 1.5rem;
+        border-radius: 10px;
+        max-width: 95%;
+        backdrop-filter: blur(5px);
+        background: rgba(15, 23, 42, 0.85);
+    }
+    
+    .intro-text h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .intro-text p {
+        font-size: 0.9rem;
+    }
+    
+    .loader {
+        top: 20px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    /* Ajustes para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .image-container {
+            height: 45vh !important;
+            max-height: 350px;
+        }
+        
+        .intro-text {
+            padding: 1rem;
+            bottom: 5%;
+        }
+        
+        .intro-text h1 {
+            font-size: 1.4rem;
+        }
+        
+        .intro-text p {
+            font-size: 0.8rem;
+        }
+        
+        .loader {
+            top: 15px;
+        }
+    }
+    
+    /* Ajustes para orientación horizontal en móviles */
+    @media (max-height: 500px) and (orientation: landscape) {
+        #intro {
+            padding: 20px 0;
+        }
+        
+        .image-container {
+            height: 80vh !important;
+            max-height: none;
+        }
+        
+        .intro-text {
+            bottom: 15%;
+            padding: 0.8rem 1.2rem;
+        }
+        
+        .intro-text h1 {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+/* Optimizaciones para rendimiento en móviles */
+@media (max-width: 768px) {
+    #aerial {
+        transform: translateZ(0); /* Acelerar hardware */
+        backface-visibility: hidden;
+        perspective: 1000;
+    }
+    
+    .image-container::before {
+        opacity: 0.3; /* Más sutil en móvil */
+        filter: blur(5px);
+    }
+}
+
+/* Prevenir zoom de doble toque en la imagen */
+#aerial {
+    touch-action: manipulation;
+}
+
+/* Mejorar la transición en dispositivos táctiles */
+.image-container {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Clase para cuando la animación está activa */
+.animating {
+    overflow: hidden;
+    height: 100vh;
+}

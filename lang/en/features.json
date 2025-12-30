@@ -1,0 +1,46 @@
+{
+  "features": {
+    "label": "AMENITIES",
+    "title": "Everything you need (and a little more)",
+
+    "wifi": {
+      "title": "Fast WiFi",
+      "desc": "Perfect for uploading photos and making everyone jealous."
+    },
+
+    "garden": {
+      "title": "Private Garden",
+      "desc": "Where the mangoes fall naturally."
+    },
+
+    "ac": {
+      "title": "Ice-Cold A/C",
+      "desc": "Because warm weather is great, but sleeping sweaty isn't."
+    },
+
+    "kitchen": {
+      "title": "Full Kitchen",
+      "desc": "For burning the rice with style."
+    },
+
+    "pool": {
+      "title": "Pool",
+      "desc": "Small but gets the job done."
+    },
+
+    "parking": {
+      "title": "Parking",
+      "desc": "Your car deserves a vacation too."
+    },
+
+    "tv": {
+      "title": "Smart TV",
+      "desc": "Tropical Netflix & Chill."
+    },
+
+    "bbq": {
+      "title": "BBQ",
+      "desc": "The sacred ritual of the grill."
+    }
+  }
+}

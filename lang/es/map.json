@@ -1,0 +1,16 @@
+{
+  "map": {
+    "title": "Ubicación Estratégica",
+    "subtitle": "En el corazón de todo, lejos del ruido",
+    "howToGet": "¿Cómo llegar?",
+    "fromSJ": {
+      "title": "Desde San José",
+      "desc": "1.5 horas por Costanera Sur"
+    },
+    "gps": {
+      "title": "Coordenadas GPS",
+      "desc": "9.5167° N, 84.3167° W"
+    },
+    "button": "Cómo llegar"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "map": {
+    "title": "Strategic Location",
+    "subtitle": "In the heart of everything, far from the noise",
+    "howToGet": "How to get here",
+    "fromSJ": {
+      "title": "From San José",
+      "desc": "1.5 hours through Costanera Sur"
+    },
+    "gps": {
+      "title": "GPS Coordinates",
+      "desc": "9.5167° N, 84.3167° W"
+    },
+    "button": "Get Directions"
+  }
+}

@@ -1,0 +1,78 @@
+/* Contenedor general del selector */
+.lang-selector {
+    position: relative;
+    margin-left: auto;
+    margin-right: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 12px; 
+}
+
+/* Botón visible (la bandera seleccionada) */
+.lang-selector .lang-selected {
+    display: flex;
+    align-items: center;
+    background: #ffffff20;
+    padding: 6px 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(8px);
+    border: 1px solid #ffffff40;
+    gap: 6px;
+    transition: 0.2s;
+}
+
+.lang-selector .lang-selected:hover {
+    background: #ffffff35;
+}
+
+/* Imagen principal */
+.lang-selector .lang-selected img {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+}
+
+/* Dropdown oculto */
+.lang-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    padding: 8px 0;
+    width: 130px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.25s ease;
+    z-index: 1000;
+}
+
+/* Mostrar dropdown */
+.lang-selector.open .lang-dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Elementos del dropdown */
+.lang-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.lang-option img {
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.lang-option:hover {
+    background: #f2f2f2;
+}

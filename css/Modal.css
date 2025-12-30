@@ -1,0 +1,71 @@
+
+
+/* Modal estilo glassmorphism pop-up */
+.modal-fun {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(7px);
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+/* Caja del modal */
+.modal-fun-content {
+    background: rgba(255,255,255,0.85);
+    border-radius: 20px;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: modalPop 0.35s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Animación pop */
+@keyframes modalPop {
+    0% { transform: scale(0.7); opacity: 0; }
+    70% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* Botón cerrar */
+.modal-fun-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #444;
+    transition: 0.3s;
+}
+
+.modal-fun-close:hover {
+    transform: rotate(90deg);
+    color: #000;
+}
+
+/* Icono divertido */
+.modal-fun-icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+/* Títulos */
+.modal-fun-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.modal-fun-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}

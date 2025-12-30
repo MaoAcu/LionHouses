@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c3e50">
+    <meta property="og:title" content="Lions HOUSES">
+    <meta property="og:description" content="Ven y disfruta. Aquí tu espíritu despierta y ruge con la fuerza de un león.">
+    <meta property="og:image" content="images/link_lions.png">
+    <meta property="og:type" content="website">
+    <title>Lions Houses - Tu Refugio en el Mar</title>
+    <link rel="stylesheet" href="css/lang.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Modal.css">
+       <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+          <!-- INTRO ANIMADA -->
+<!-- INTRO ANIMADA - Versión optimizada para móviles -->
+<section id="intro" class="intro-animation">
+    <div class="loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    
+    <div class="image-container">
+        <img src="images/Lion_Hoses_main.jpeg"
+             alt="Entrada principal de la casa - Lions Houses"
+             id="aerial"
+             loading="eager" 
+             decoding="async">
+        <!-- Texto de accesibilidad para móviles -->
+        <div class="skip-animation" onclick="skipAnimation()">
+            Saltar animación
+        </div>
+    </div>
+    
+    <div class="intro-text">
+        <p>Casa en renta · Ubicación privilegiada</p>
+    </div>
+</section>
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="800" data-aos-delay="500">
+   
+        
+        <!-- Barra de menú superior -->
+        <div class="menu-bar">
+            
+           <div class="navbar-container">
+            <img src="images/Lions_Logo.jpg" class="location-avatar" alt="Foto del lugar">
+            <div class="navbar-logo">LIONS HOUSES</div>
+            <button class="navbar-btn">RESERVAR</button>
+            <div id="langSelector" class="lang-selector">
+            <div class="lang-dropdown">
+                <div class="lang-option" data-lang="es">
+                    <img src="images/flags/es.jpeg"> <span>Español</span>
+                </div>
+                <div class="lang-option" data-lang="en">
+                    <img src="images/flags/en.png"> <span>English</span>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </nav>
+
+
+    
+    <section class="hero">
+    <div class="hero-left">
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
+            <span data-i18n="home.title_line1">LIONS</span><br>
+            <span class="italic" data-i18n="home.title_line2">Houses</span>
+        </h1>
+
+        <p class="hero-description" data-i18n="home.description" data-aos="fade-up" data-aos-delay="400" data-i18n="home.description">
+            Your refuge in the sea. Donde el rugido del mar es tu única alarma matutina.
+        </p>
+        
+        <!-- Clima -->
+        <div class="hero-weather" id="weatherWidget" data-aos="fade-up" data-aos-delay="500">
+            <i id="weatherIcon" class="fas fa-sun"></i>
+
+            <span id="weatherText" data-i18n="home.weather_loading">
+               
+            </span>
+
+            <span id="weatherValue"></span>
+        </div>
+        
+        <div class="hero-footer" data-aos="fade-up" data-aos-delay="600">
+            <div class="divider"></div>
+            <div class="hero-info">
+                <span data-i18n="home.location">Parrita, CR</span>
+                <span id="currentTemp"></span>
+                <span data-i18n="home.puravida">Pura Vida</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-center" data-aos="zoom-in" data-aos-delay="700">
+        <div class="hero-overlay"></div>
+        <p class="hero-quote" data-i18n="home.quote">
+            "El único rey de la selva aquí eres tú (en la hamaca)."
+        </p>
+    </div>
+
+    <div class="hero-right">
+        <h3 class="sidebar-title" data-i18n="home.sidebar_title1" data-aos="fade-left" data-aos-delay="300" data-i18n="home.sidebar_title1">La Guarida</h3>
+        <p class="sidebar-text" data-i18n="home.sidebar_text1" data-aos="fade-left" data-aos-delay="400" data-i18n="home.sidebar_text1">
+            Un refugio costero donde la única caza permitida es la de atardeceres y cocos fríos.
+        </p>
+
+        <h3 class="sidebar-title" data-i18n="home.sidebar_title2" data-aos="fade-left" data-aos-delay="600" data-i18n="home.sidebar_text2">Ubicación</h3>
+        <p class="sidebar-text" data-i18n="home.sidebar_text2">
+            Playa Bandera, Parrita.<br>
+            A 10 minutos de los monos.<br>
+            A 5 minutos del mar.<br>
+            A 0 minutos del estrés.
+        </p>
+        
+        <button class="btn-availability" data-aos="fade-left" data-aos-delay="700" onclick="window.open('https:/airbnb.com', '_blank')">
+            <i class="fab fa-airbnb"></i>
+            <span data-i18n="home.btn_airbnb">Reservar en Airbnb</span>
+        </button>
+        
+        <div class="rules-mini" data-aos="fade-left" data-aos-delay="800">
+            <p><i class="fas fa-check"></i> <span data-i18n="home.rule_checkin">Check-in: 3PM</span></p>
+            <p><i class="fas fa-check"></i> <span data-i18n="home.rule_checkout">Check-out: 11AM</span></p>
+            <p><i class="fas fa-check"></i> <span data-i18n="home.rule_maxpeople">Máx. 6 personas</span></p>
+        </div>
+    </div>
+</section>
+
+    <section class="marquee-section" data-aos="fade-up" data-aos-delay="200">
+    <div class="marquee">
+        <div class="marquee-content">
+            <span class="marquee-item" data-i18n="marquee.noStress">★ NO ACEPTAMOS ESTRÉS</span>
+            <span class="marquee-item" data-i18n="marquee.fastWifi">★ WIFI MÁS RÁPIDO QUE TU JEFE</span>
+            <span class="marquee-item" data-i18n="marquee.sunsets">★ ATARDECERES INCLUIDOS</span>
+            <span class="marquee-item" data-i18n="marquee.pool">★ PISCINA ANTI-PROBLEMAS</span>
+
+          
+            <span class="marquee-item" data-i18n="marquee.noStress">★ NO ACEPTAMOS ESTRÉS</span>
+            <span class="marquee-item" data-i18n="marquee.fastWifi">★ WIFI MÁS RÁPIDO QUE TU JEFE</span>
+            <span class="marquee-item" data-i18n="marquee.sunsets">★ ATARDECERES INCLUIDOS</span>
+            <span class="marquee-item" data-i18n="marquee.pool">★ PISCINA ANTI-PROBLEMAS</span>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section (tu diseño original) -->
+   <section class="about-section">
+    <div class="about-left" data-aos="fade-right" data-aos-delay="200">
+        <h2 class="section-title" data-i18n="about.title"></h2>
+
+        <p class="about-text" data-i18n="about.text1"></p>
+        <p class="about-text" data-i18n="about.text2"></p>
+    </div>
+
+    <div class="about-right">
+        <div class="service-item" onclick="openModal('servicios')"
+            data-aos="fade-left" 
+            data-aos-delay="300"
+            data-aos-anchor-placement="top-center">
+            <span class="service-text" data-i18n="about.services"></span>
+            <span class="arrow">→</span>
+        </div>
+
+        <div class="service-item" onclick="openModal('anfitrion')"
+            data-aos="fade-left" 
+            data-aos-delay="400"
+            data-aos-anchor-placement="top-center">
+            <span class="service-text" data-i18n="about.host"></span>
+            <span class="arrow">→</span>
+        </div>
+
+        <div class="service-item" onclick="openModal('guia')"
+            
+            data-aos="fade-left" 
+            data-aos-delay="500"
+            data-aos-anchor-placement="top-center">
+            <span class="service-text" data-i18n="about.guide"></span>
+            <span class="arrow">→</span>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="infoModal" class="modal-fun">
+        <div class="modal-fun-content">
+            <span class="modal-fun-close" onclick="closeModal()">×</span>
+
+            <div class="modal-fun-icon" id="modalIcon">🐾</div>
+
+            <h2 class="modal-fun-title" id="modalTitle"></h2>
+            <p class="modal-fun-text" id="modalText"></p>
+        </div>
+    </div>
+</section>
+
+
+     <!-- Features Section -->
+    <section class="features-section">
+    <div class="features-header" data-aos="fade-up" data-aos-delay="100">
+        <span class="features-label" data-i18n="features.features.label">COMODIDADES</span>
+        <h2 class="section-title" data-i18n="features.features.title">Todo lo que necesitas (y un poco más)</h2>
+    </div>
+
+    <div class="features-grid">
+
+        <div class="feature-card" data-aos="flip-left" data-aos-delay="200">
+            <div class="feature-icon">📡</div>
+            <h3 class="feature-title" data-i18n="features.features.wifi.title">WiFi Veloz</h3>
+            <p class="feature-desc" data-i18n="features.features.wifi.desc">Para subir fotos y dar envidia.</p>
+        </div>
+
+        <div class="feature-card" data-aos="flip-left" data-aos-delay="300">
+            <div class="feature-icon">🌴</div>
+            <h3 class="feature-title" data-i18n="features.features.garden.title">Jardín Privado</h3>
+            <p class="feature-desc" data-i18n="features.features.garden.desc">Donde caen los mangos.</p>
+        </div>
+
+        <div class="feature-card" data-aos="flip-left" data-aos-delay="400">
+            <div class="feature-icon">❄️</div>
+            <h3 class="feature-title" data-i18n="features.features.ac.title">A/C Glacial</h3>
+            <p class="feature-desc" data-i18n="features.features.ac.desc">Porque el calor es rico, pero dormir sudando no.</p>
+        </div>
+
+        <div class="feature-card" data-aos="flip-left" data-aos-delay="500">
+            <div class="feature-icon">🍳</div>
+            <h3 class="feature-title" data-i18n="features.features.kitchen.title">Cocina Full</h3>
+            <p class="feature-desc" data-i18n="features.features.kitchen.desc">Para quemar el arroz con estilo.</p>
+        </div>
+
+        <div class="feature-card" data-aos="flip-right" data-aos-delay="200">
+            <div class="feature-icon">☀️</div>
+            <h3 class="feature-title" data-i18n="features.features.pool.title">Piscina</h3>
+            <p class="feature-desc" data-i18n="features.features.pool.desc">Pequeña pero cumplidora.</p>
+        </div>
+
+        <div class="feature-card" data-aos="flip-right" data-aos-delay="300">
+            <div class="feature-icon">🚗</div>
+            <h3 class="feature-title" data-i18n="features.features.parking.title">Parqueo</h3>
+            <p class="feature-desc" data-i18n="features.features.parking.desc">Tu carro también merece vacaciones.</p>
+        </div>
+
+        <div class="feature-card" data-aos="flip-right" data-aos-delay="400">
+            <div class="feature-icon">📺</div>
+            <h3 class="feature-title" data-i18n="features.features.tv.title">Smart TV</h3>
+            <p class="feature-desc" data-i18n="features.features.tv.desc">Netflix & Chill tropical.</p>
+        </div>
+
+        <div class="feature-card" data-aos="flip-right" data-aos-delay="500">
+            <div class="feature-icon">🔥</div>
+            <h3 class="feature-title" data-i18n="features.features.bbq.title">BBQ</h3>
+            <p class="feature-desc" data-i18n="features.features.bbq.desc">El ritual sagrado de la carne asada.</p>
+        </div>
+
+    </div>
+</section>
+
+
+ 
+   <section class="calendar-section" data-aos="zoom-in-up" data-aos-delay="200">
+    <div class="calendar-header">
+        <h2 class="section-title" data-i18n="calendar.calendar.title">Reserva Tu Espacio en la Jungla</h2>
+        <p class="booking-subtitle" data-i18n="calendar.calendar.subtitle">
+            Revisa disponibilidad y precios directamente en Airbnb
+        </p>
+    </div>
+    
+    <div class="calendar-container">
+        <div class="calendar-widget" data-aos="zoom-in" data-aos-delay="400">
+            <div class="calendar-placeholder">
+                <i class="fab fa-airbnb"></i>
+                <p data-i18n="calendar.calendar.placeholder">Calendario de disponibilidad</p>
+
+                <button class="btn-calendar" onclick="openCalendar()" data-i18n="calendar.1calendar.button">
+                    Ver disponibilidad en Airbnb
+                </button>
+            </div>
+        </div>
+
+        <section class="booking-section"></section>
+    </div>
+</section>
+
+
+    
+    <section class="gallery-section">
+   
+            <div class="gallery-item" data-image="Gallery1.jpg" data-label="LA SALA"  
+                data-aos="fade-up" 
+                data-aos-delay="200"
+                data-aos-anchor-placement="top-bottom">>
+                <div class="gallery-image" style="background-image: url('images/Lion_Hoses_living_room.jpeg');"></div>
+                <div class="gallery-overlay">
+                    <span class="gallery-label">LA SALA</span>
+                    <i class="fas fa-expand"></i>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-image="Gallery2.jpg" data-label="EL NIDO"
+                data-aos="fade-up" 
+                data-aos-delay="300"
+                data-aos-anchor-placement="top-bottom">
+            >
+                <div class="gallery-image" style="background-image: url('images/Lion_Hoses_Bedroom1.jpeg');"></div>
+                <div class="gallery-overlay">
+                    <span class="gallery-label">EL NIDO</span>
+                    <i class="fas fa-expand"></i>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-image="Gallery3.jpg" data-label="LA POZA" 
+                data-aos="fade-up" 
+                data-aos-delay="400"
+                data-aos-anchor-placement="top-bottom"> 
+            >
+                <div class="gallery-image" style="background-image: url('images/Lion_Hoses_kitchen.jpeg');"></div>
+                <div class="gallery-overlay">
+                    <span class="gallery-label">Cocina</span>
+                    <i class="fas fa-expand"></i>
+                </div>
+            </div>
+    
+    </section>
+
+   
+    <section class="map-section">
+    <div class="map-header" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="section-title" data-i18n="map.map.title">Ubicación Estratégica</h2>
+        <p class="map-subtitle" data-i18n="map.map.subtitle">En el corazón de todo, lejos del ruido</p>
+    </div>
+    
+    <div class="map-container">
+        <div class="map-simple" data-aos="fade-right" data-aos-delay="200">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3935.0623638503685!2d-84.37951932596776!3d9.503305590578213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzAnMTEuOSJOIDg0wrAyMiczNy4wIlc!5e0!3m2!1ses!2scr!4v1765358836727!5m2!1ses!2scr"
+                width="800"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div class="map-info" data-aos="fade-left" data-aos-delay="300">
+            <h3 data-i18n="map.map.howToGet">¿Cómo llegar?</h3>
+
+            <div class="direction-item">
+                <i class="fas fa-car"></i>
+                <div>
+                    <h4 data-i18n="map.map.fromSJ.title">Desde San José</h4>
+                    <p data-i18n="map.map.fromSJ.desc">1.5 horas por Costanera Sur</p>
+                </div>
+            </div>
+
+            <div class="direction-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4 data-i18n="map.map.gps.title">Coordenadas GPS</h4>
+                    <p data-i18n="map.map.gps.desc">9.5167° N, 84.3167° W</p>
+                </div>
+            </div>
+
+            <button class="btn-directions" onclick="openGoogleMaps()" data-i18n="map.map.button">
+                <i class="fas fa-directions"></i> Cómo llegar
+            </button>
+        </div>
+    </div>
+</section>
+
+
+ 
+    <section class="reviews-section">
+        <div class="reviews-header" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="section-title">Rugidos de Aprobación</h2>
+            <p class="reviews-subtitle">Lo que dicen nuestros huéspedes</p>
+        </div>
+        
+        <div class="reviews-slider">
+            <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"El WiFi es TAN rápido que hasta pude hacer Zoom con mi jefe desde la hamaca. 10/10 would procrastinate again."</p>
+                <div class="review-author">- Carlos, el Remoto</div>
+            </div>
+            
+            <div class="review-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Los atardeceres aquí deberían ser ilegales. Tan bellos que hasta los monos se callan para verlos."</p>
+                <div class="review-author">- Ana, la Fotógrafa</div>
+            </div>
+            
+            <div class="review-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">"La piscina pequeña pero cumplidora. El único problema: mis hijos ahora quieren mudarse aquí permanentemente."</p>
+                <div class="review-author">- Familia Rodríguez</div>
+            </div>
+        </div>
+        
+        <div class="reviews-more" data-aos="fade-up" data-aos-delay="500">
+            <a href="https://airbnb.com" target="_blank" class="link-more">
+                Ver más reseñas en Airbnb <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </section>
+
+  
+    <section class="contact-section">
+    <div class="contact-left" data-aos="fade-right" data-aos-delay="200">
+        <span class="contact-label" data-i18n="contact.contact.label">CONTÁCTANOS</span>
+
+        <h2 class="section-title" data-i18n="contact.contact.title">¿Alguna duda existencial?</h2>
+
+        <p class="contact-description" data-i18n="contact.contact.description">
+            ¿Eres una familia buscando paz? ¿Un grupo de amigos buscando fiesta responsable? ¿O simplemente alguien que odia los hoteles? Escríbenos.
+        </p>
+
+        <div class="contact-quick">
+            <button class="btn-whatsapp" onclick="openWhatsApp()" data-i18n="contact.contact.whatsappBtn">
+                <i class="fab fa-whatsapp"></i> CHATEAR POR WHATSAPP
+            </button>
+
+            <div class="contact-email">
+                <i class="fas fa-envelope"></i>
+                <span data-i18n="contact.contact.email">info@lionshouses.com</span>
+            </div>
+        </div>
+
+        <div class="simple-question">
+            <h3 data-i18n="contact.contact.quickQuestion.title">Pregunta rápida</h3>
+            <textarea rows="3" data-i18n="contact.contact.quickQuestion.placeholder" placeholder="¿Algo específico que quieras saber?"></textarea>
+
+            <button class="btn-quick-question" data-i18n="contact.contact.quickQuestion.button">
+                Enviar pregunta
+            </button>
+        </div>
+    </div>
+
+    <div class="contact-right" data-aos="fade-left" data-aos-delay="300">
+        <form class="contact-form" id="contactForm">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" data-i18n="contact.contact.form.nameLabel">NOMBRE</label>
+                    <input type="text" class="form-input" 
+                           data-i18n="contact.contact.form.namePlaceholder" 
+                           placeholder="Tu nombre" required>
+                </div>
+
+                <div class="form-group" data-aos="fade-up" data-aos-delay="100">
+                    <label class="form-label" data-i18n="contact.contact.form.lastNameLabel">APELLIDO</label>
+                    <input type="text" class="form-input" 
+                           data-i18n="contact.contact.form.lastNamePlaceholder" 
+                           placeholder="Tu apellido">
+                </div>
+            </div>
+
+            <div class="form-group" data-aos="fade-up" data-aos-delay="150">
+                <label class="form-label" data-i18n="contact.form.form.emailLabel">EMAIL</label>
+                <input type="email" class="form-input"
+                       data-i18n-="contact.contact.form.emailPlaceholder"
+                       placeholder="tu@email.com"
+                       required>
+            </div>
+
+            <div class="form-row" data-aos="fade-up" data-aos-delay="200">
+                <div class="form-group">
+                    <label class="form-label" data-i18n="contact.contact.form.datesLabel">FECHAS DE INTERÉS</label>
+                    <input type="text" class="form-input"
+                           data-i18n="contact.contact.form.datesPlaceholder"
+                           placeholder="Ej: 15-20 Marzo"
+                           onfocus="this.type='date'" 
+                           onblur="if(!this.value)this.type='text'">
+                </div>
+            </div>
+
+            <div class="form-group" data-aos="fade-up" data-aos-delay="250">
+                <label class="form-label" data-i18n="contact.contact.form.messageLabel">MENSAJE</label>
+
+                <textarea class="form-input form-textarea"
+                          data-i18n="contact.contact.form.messagePlaceholder"
+                          placeholder="Cuéntanos tus planes..."
+                          required></textarea>
+            </div>
+
+            <button type="submit" class="btn-send" data-i18n="contact.contact.form.sendBtn">
+                ENVIAR MENSAJE
+            </button>
+
+            <div class="form-confirmation" id="formConfirmation"></div>
+        </form>
+    </div>
+</section>
+
+
+    
+    <footer class="footer" data-aos="fade-up" data-aos-delay="100">
+    <div class="footer-content">
+
+        <div class="footer-section">
+            <h4 class="footer-title" data-i18n="footer.footer.lions.title">LIONS HOUSES</h4>
+            <ul class="footer-links">
+                <li><a href="#inicio" data-i18n="footer.footer.lions.home">Inicio</a></li>
+                <li><a href="#casa" data-i18n="footer.footer.lions.house">La Casa</a></li>
+                <li><a href="#galeria" data-i18n="footer.footer.lions.gallery">Galería</a></li>
+                <li><a href="#reglas" data-i18n="footer.footer.lions.rules">Reglas (Pocas)</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4 class="footer-title" data-i18n="footer.footer.legal.title">LEGAL</h4>
+            <ul class="footer-links">
+                <li><a href="#privacidad" data-i18n="footer.footer.legal.privacy">Privacidad</a></li>
+                <li><a href="#terminos" data-i18n="footer.footer.legal.terms">Términos</a></li>
+                <li><a href="#cancelacion" data-i18n="footer.footer.legal.cancel">Política de Cancelación</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4 class="footer-title" data-i18n="footer.footer.reservations.title">RESERVAS</h4>
+            <ul class="footer-links">
+                <li><a href="https://airbnb.com" target="_blank" data-i18n="footer.footer.reservations.airbnb">Airbnb</a></li>
+                <li><a href="https://vrbo.com" target="_blank" data-i18n="footer.footer.reservations.vrbo">Vrbo</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4 class="footer-title" data-i18n="footer.footer.follow.title">SÍGUENOS</h4>
+            <ul class="footer-links">
+                <li><a href="#instagram" data-i18n="footer.footer.follow.instagram">Instagram @LionsHouses</a></li>
+                <li><a href="#tiktok" data-i18n="footer.footer.follow.tiktok">TikTok @LionsHouses</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-logo" data-i18n="footer.footer.logo">REFUGE</div>
+
+    <div class="footer-bottom">
+        <span data-i18n="footer.footer.bottom.copy">© <span id="currentYear">2025</span> LIONS HOUSES</span>
+        <span data-i18n="footer.footer.bottom.location">Parrita, Costa Rica</span>
+        <span data-i18n="footer.footer.bottom.phrase">Pura Vida Always</span>
+    </div>
+</footer>
+
+
+   
+    <div class="simple-lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+
+        <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Inicializar AOS después de que la animación intro termine
+        document.addEventListener('DOMContentLoaded', function() {
+            // Esperar a que termine la animación de entrada
+            setTimeout(function() {
+                AOS.init({
+                    // Configuración personalizada
+                    duration: 1000, // Duración de la animación en ms
+                    once: false, // La animación solo ocurre una vez
+                    offset: 100, // Offset (px) desde el borde inferior de la ventana
+                    delay: 0, // Retardo entre animaciones
+                    easing: 'ease-out-cubic', // Curva de aceleración
+                    disable: function() {
+                        // Deshabilitar en dispositivos móviles pequeños
+                        return window.innerWidth < 768;
+                    },
+                    // Configuración para mejor rendimiento
+                    disableMutationObserver: false,
+                    startEvent: 'DOMContentLoaded'
+                });
+                
+                // Refrescar AOS cuando cambia el idioma
+                document.addEventListener('languageChanged', function() {
+                    AOS.refresh();
+                });
+                
+            }, 4000); // 4 segundos para que termine la animación intro
+        });
+    </script>
+    <script>
+document.addEventListener("click", e => {
+    if (e.target.classList.contains("lang-flag")) {
+        const lang = e.target.getAttribute("data-lang");
+        i18n.setLanguage(lang);
+    }
+});
+</script>
+   
+     <script src="js/animation.js"></script>
+    <script src="js/lang.js"></script>
+    <script src="js/ModalInfo.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/clima.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/features.js"></script>
+   
+     
+</body>
+</html>

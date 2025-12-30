@@ -1,0 +1,38 @@
+{
+  "footer": {
+    "lions": {
+      "title": "LIONS HOUSES",
+      "home": "Home",
+      "house": "The House",
+      "gallery": "Gallery",
+      "rules": "Rules (Few)"
+    },
+
+    "legal": {
+      "title": "LEGAL",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions",
+      "cancel": "Cancellation Policy"
+    },
+
+    "reservations": {
+      "title": "BOOKINGS",
+      "airbnb": "Airbnb",
+      "vrbo": "Vrbo"
+    },
+
+    "follow": {
+      "title": "FOLLOW US",
+      "instagram": "Instagram @LionsHouses",
+      "tiktok": "TikTok @LionsHouses"
+    },
+
+    "logo": "REFUGE",
+
+    "bottom": {
+      "copy": "© 2025 LIONS HOUSES",
+      "location": "Parrita, Costa Rica",
+      "phrase": "Pura Vida Always"
+    }
+  }
+}
