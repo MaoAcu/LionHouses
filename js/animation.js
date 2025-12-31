@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ocultar loader
         zoomTl.to(loader, {
             opacity: 0,
-            duration: 0.4,
+            duration: 0.5,
             ease: "power2.in"
         });
         
