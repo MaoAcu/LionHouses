@@ -267,8 +267,8 @@ body {
 
 .marquee-content {
   display: flex;
-  animation: scroll-left 40s linear infinite;
   white-space: nowrap;
+  animation: scroll-left 30s linear infinite;
 }
 
 .marquee-item {
@@ -285,11 +285,11 @@ body {
 }
 
 @keyframes scroll-left {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(-100vw);
   }
 }
 
@@ -676,6 +676,10 @@ body {
     align-items: center;
     gap: 10px;
 }
+  .house-rules-section {
+    margin-top: 4rem !important;       
+    padding-top: 1rem !important;     
+}
 .house-rules-accordion { background: var(--primary-light); padding: 40px 20px; }
 .rules-wrapper { max-width: 800px; margin: 0 auto; }
 
@@ -757,6 +761,9 @@ body {
 }
 
 @media (max-width: 768px) {
+     .marquee-content {
+    animation-duration: 15s;
+  }
     .gallery-item-slide { min-width: 100%; } /* 1 cuadro en móvil */
 }
 
@@ -1041,9 +1048,7 @@ body {
     .footer {
         padding: 1rem 0.5rem 0.5rem;
     }
-}
-/*nuevo css*/
-
+} 
 
 .hero-weather {
     margin: 1rem 0;
@@ -1780,7 +1785,7 @@ body {
         padding: 1.5rem !important;
         border: none !important;
     }
-    
+  
     .form-row {
         flex-direction: column;
         gap: 1rem;
