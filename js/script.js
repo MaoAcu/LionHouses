@@ -96,7 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const track = document.getElementById('homeSliderTrack');
     const imagePath = "images/gallery/Lions_Houses_f"; 
     
-    // Generar los cuadros dinámicamente
+   
+    // Si track es null (no existe en esta página), salimos de la función.
+    if (!track) return; 
+
+    // Solo si existe el track  ejecutamos el bucle
     for (let i = 3; i <= 27; i++) {
         const slide = document.createElement('div');
         slide.className = 'gallery-item-slide';
@@ -109,7 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
         track.appendChild(slide);
     }
 });
-
 function moveSlider(direction) {
     const track = document.getElementById('homeSliderTrack');
     const cards = document.querySelectorAll('.gallery-item-slide');
