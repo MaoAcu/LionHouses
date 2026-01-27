@@ -23,10 +23,7 @@
       "desc": "For burning the rice with style."
     },
 
-    "pool": {
-      "title": "Pool",
-      "desc": "Small but gets the job done."
-    },
+    
 
     "parking": {
       "title": "Parking",
@@ -36,11 +33,8 @@
     "tv": {
       "title": "Smart TV",
       "desc": "Tropical Netflix & Chill."
-    },
-
-    "bbq": {
-      "title": "BBQ",
-      "desc": "The sacred ritual of the grill."
     }
+
+    
   }
 }

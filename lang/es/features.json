@@ -23,10 +23,6 @@
       "desc": "Para quemar el arroz con estilo."
     },
 
-    "pool": {
-      "title": "Piscina",
-      "desc": "Pequeña, pero cumple su misión."
-    },
 
     "parking": {
       "title": "Parqueo",
@@ -36,11 +32,6 @@
     "tv": {
       "title": "Smart TV",
       "desc": "Netflix & Chill tropical."
-    },
-
-    "bbq": {
-      "title": "BBQ",
-      "desc": "El ritual sagrado de la parrilla."
     }
   }
 }
