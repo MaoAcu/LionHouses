@@ -14,7 +14,7 @@ function openModal(type) {
         case 'anfitrion':
             title.innerText = i18n.data.about.modal_host_title;
             text.innerText = i18n.data.about.modal_host_text;
-            icon.innerText = "🐶";
+            icon.innerText = "👤";
             break;
 
         case 'guia':
