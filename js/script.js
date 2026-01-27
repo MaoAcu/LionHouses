@@ -75,3 +75,52 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+function toggleAccordion(element) {
+    // Obtenemos el elemento padre (.accordion-item)
+    const item = element.parentElement;
+    
+    // Toggle de la clase 'active'
+    item.classList.toggle('active');
+    
+    // (Opcional) Cerrar otros que estén abiertos
+    const allItems = document.querySelectorAll('.accordion-item');
+    allItems.forEach(i => {
+        if (i !== item) {
+            i.classList.remove('active');
+        }
+    });
+}
+let currentPos = 0;
+
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById('homeSliderTrack');
+    const imagePath = "images/gallery/Lions_Houses_f"; 
+    
+    // Generar los cuadros dinámicamente
+    for (let i = 3; i <= 27; i++) {
+        const slide = document.createElement('div');
+        slide.className = 'gallery-item-slide';
+        slide.innerHTML = `
+            <img src="${imagePath}${i}.jpeg" alt="Habitación ${i}">
+            <div class="gallery-overlay">
+                <span class="gallery-label">LION HOUSES</span>
+            </div>
+        `;
+        track.appendChild(slide);
+    }
+});
+
+function moveSlider(direction) {
+    const track = document.getElementById('homeSliderTrack');
+    const cards = document.querySelectorAll('.gallery-item-slide');
+    const visibleCards = window.innerWidth <= 768 ? 1 : 3;
+    const maxIndex = cards.length - visibleCards;
+
+    currentPos += direction;
+
+    if (currentPos < 0) currentPos = 0;
+    if (currentPos > maxIndex) currentPos = maxIndex;
+
+    const cardWidth = cards[0].offsetWidth + 15; // Ancho + gap
+    track.style.transform = `translateX(-${currentPos * cardWidth}px)`;
+}

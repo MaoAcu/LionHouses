@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/Modal.css">
+    <link rel="stylesheet" href="css/gallery.css">
        <!-- AOS CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     
@@ -141,20 +142,44 @@
         </div>
     </div>
 </section>
+<section class="house-rules-section" data-aos="fade-up">
+    <h2 class="section-title" data-i18n="policy.rules_title">Reglas de la Casa</h2>
+    
+    <div class="accordion-container">
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span data-i18n="policy.rule_pets_title">Política de Mascotas</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <p data-i18n="policy.rule_pets_text">No se admiten mascotas.</p>
+            </div>
+        </div>
 
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span data-i18n="policy.rule_price_title">Precio por noche</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <p data-i18n="policy.rule_price_text">130 dólares estadounidenses por noche.</p>
+            </div>
+        </div>
+    </div>
+</section>
     <section class="marquee-section" data-aos="fade-up" data-aos-delay="200">
     <div class="marquee">
         <div class="marquee-content">
             <span class="marquee-item" data-i18n="marquee.noStress">★ NO ACEPTAMOS ESTRÉS</span>
             <span class="marquee-item" data-i18n="marquee.fastWifi">★ WIFI MÁS RÁPIDO QUE TU JEFE</span>
             <span class="marquee-item" data-i18n="marquee.sunsets">★ ATARDECERES INCLUIDOS</span>
-            <span class="marquee-item" data-i18n="marquee.pool">★ PISCINA ANTI-PROBLEMAS</span>
+           
 
           
             <span class="marquee-item" data-i18n="marquee.noStress">★ NO ACEPTAMOS ESTRÉS</span>
             <span class="marquee-item" data-i18n="marquee.fastWifi">★ WIFI MÁS RÁPIDO QUE TU JEFE</span>
             <span class="marquee-item" data-i18n="marquee.sunsets">★ ATARDECERES INCLUIDOS</span>
-            <span class="marquee-item" data-i18n="marquee.pool">★ PISCINA ANTI-PROBLEMAS</span>
+            
         </div>
     </div>
 </section>
@@ -242,11 +267,6 @@
             <p class="feature-desc" data-i18n="features.features.kitchen.desc">Para quemar el arroz con estilo.</p>
         </div>
 
-        <div class="feature-card" data-aos="flip-right" data-aos-delay="200">
-            <div class="feature-icon">☀️</div>
-            <h3 class="feature-title" data-i18n="features.features.pool.title">Piscina</h3>
-            <p class="feature-desc" data-i18n="features.features.pool.desc">Pequeña pero cumplidora.</p>
-        </div>
 
         <div class="feature-card" data-aos="flip-right" data-aos-delay="300">
             <div class="feature-icon">🚗</div>
@@ -260,11 +280,7 @@
             <p class="feature-desc" data-i18n="features.features.tv.desc">Netflix & Chill tropical.</p>
         </div>
 
-        <div class="feature-card" data-aos="flip-right" data-aos-delay="500">
-            <div class="feature-icon">🔥</div>
-            <h3 class="feature-title" data-i18n="features.features.bbq.title">BBQ</h3>
-            <p class="feature-desc" data-i18n="features.features.bbq.desc">El ritual sagrado de la carne asada.</p>
-        </div>
+        
 
     </div>
 </section>
@@ -333,9 +349,28 @@
                     
                 </div>
             </div>
-    
+      
     </section>
+    <section class="gallery-section-compact">
+    <h2 class="section-title-small" data-aos="fade-up">Explora el Territorio</h2>
+    
+    <div class="compact-grid" id="compactGallery"></div>
 
+    <div class="gallery-link-container" data-aos="zoom-in">
+        <a href="gallery.html" class="btn-minimal">
+            VER GALERÍA COMPLETA  <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+</section>
+
+<section class="nearby-section">
+    <div class="nearby-header">
+        <h2 class="section-title">El Vecindario</h2>
+        <div class="title-underline"></div> </div>
+
+    <div class="nearby-grid" id="nearby-list">
+        </div>
+</section>
    
     <section class="map-section">
     <div class="map-header" data-aos="fade-up" data-aos-delay="100">
@@ -345,14 +380,15 @@
     
     <div class="map-container">
         <div class="map-simple" data-aos="fade-right" data-aos-delay="200">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3935.0623638503685!2d-84.37951932596776!3d9.503305590578213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzAnMTEuOSJOIDg0wrAyMiczNy4wIlc!5e0!3m2!1ses!2scr!4v1765358836727!5m2!1ses!2scr"
-                width="800"
-                height="450"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3934.8218166611964!2d-84.36957932497498!3d9.52420519055827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzEnMjcuMSJOIDg0wrAyMicwMS4yIlc!5e0!3m2!1sen!2scr!4v1769483647913!5m2!1sen!2scr" 
+            width="800" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+           </iframe>
         </div>
 
         <div class="map-info" data-aos="fade-left" data-aos-delay="300">
@@ -362,22 +398,21 @@
                 <i class="fas fa-car"></i>
                 <div>
                     <h4 data-i18n="map.map.fromSJ.title">Desde San José</h4>
-                    <p data-i18n="map.map.fromSJ.desc">1.5 horas por Costanera Sur</p>
+                    <p data-i18n="map.map.fromSJ.desc">Puntarenas, Parrita la Palma, Residencial Grupo Los Leones, lot #21C</p>
                 </div>
             </div>
 
             <div class="direction-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
-                    <h4 data-i18n="map.map.gps.title">Coordenadas GPS</h4>
-                    <p data-i18n="map.map.gps.desc">9.5167° N, 84.3167° W</p>
-                </div>
-            </div>
-
-            <button class="btn-directions" onclick="openGoogleMaps()" data-i18n="map.map.button">
-                <i class="fas fa-directions"></i> Cómo llegar
-            </button>
-        </div>
+    <i class="fas fa-map-marker-alt"></i>
+    <div>
+        <h4 data-i18n="map.map.gps.title">UBICACIÓN</h4>
+        <a href="https://www.google.com/maps/dir//9.524194,-84.367000/" 
+           target="_blank" 
+           style="text-decoration:none;" >
+            <i class="fas fa-map-marker-alt"></i> Como Llegar
+        </a>
+    </div>
+</div>
     </div>
 </section>
 
@@ -402,11 +437,7 @@
                 <div class="review-author">- Ana, la Fotógrafa</div>
             </div>
             
-            <div class="review-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="review-stars">★★★★☆</div>
-                <p class="review-text">"La piscina pequeña pero cumplidora. El único problema: mis hijos ahora quieren mudarse aquí permanentemente."</p>
-                <div class="review-author">- Familia Rodríguez</div>
-            </div>
+            
         </div>
         
         <div class="reviews-more" data-aos="fade-up" data-aos-delay="500">
@@ -514,7 +545,7 @@
             <ul class="footer-links">
                 <li><a href="#inicio" data-i18n="footer.footer.lions.home">Inicio</a></li>
                 <li><a href="#casa" data-i18n="footer.footer.lions.house">La Casa</a></li>
-                <li><a href="#galeria" data-i18n="footer.footer.lions.gallery">Galería</a></li>
+                <li><a href="#gallery" data-i18n="footer.footer.lions.gallery">Galería</a></li>
                 <li><a href="#reglas" data-i18n="footer.footer.lions.rules">Reglas (Pocas)</a></li>
             </ul>
         </div>
@@ -567,60 +598,7 @@
 
         <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Inicializar AOS después de que la animación intro termine
-       document.addEventListener('DOMContentLoaded', function() {
-    // Esperar a que termine la animación de entrada
-    setTimeout(function() {
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                // Configuración personalizada
-                duration: 1000, // Duración de la animación en ms
-                once: true, //   animación solo ocurre una vez
-                offset: 100, // Offset (px) desde el borde inferior de la ventana
-                delay: 0, // Retardo entre animaciones
-                easing: 'ease-out-cubic', // Curva de aceleración
-                
-                // Optimización para móviles
-                disable: function() {
-                    // Solo deshabilitar en móviles MUY pequeños
-                    var maxWidth = 360;
-                    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-                    return window.innerWidth < maxWidth && isMobile;
-                },
-                
-                // Configuraciones de AOS
-                startEvent: 'DOMContentLoaded',
-                initClassName: 'aos-init',
-                animatedClassName: 'aos-animate',
-                useClassNames: false,
-                disableMutationObserver: false,
-                debounceDelay: 50,
-                throttleDelay: 99,
-                
-                
-            });
-            
-          
-            
-            // Refrescar AOS cuando cambia el idioma
-            document.addEventListener('languageChanged', function() {
-                setTimeout(function() {
-                    AOS.refresh();
-                }, 300);
-            });
-            
-            
-            setTimeout(function() {
-                AOS.refresh();
-            }, 1000);
-            
-        } else {
-            console.warn('AOS no está cargado');
-        }
-    }, 4000);  
-});
-    </script>
+  <script src="js/animationAos.js"></script>
     <script>
 document.addEventListener("click", e => {
     if (e.target.classList.contains("lang-flag")) {
@@ -628,6 +606,7 @@ document.addEventListener("click", e => {
         i18n.setLanguage(lang);
     }
 });
+        
 </script>
    
      <script src="js/animation.js"></script>
@@ -637,6 +616,8 @@ document.addEventListener("click", e => {
     <script src="js/clima.js"></script>
     <script src="js/script.js"></script>
     <script src="js/features.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/vecindario.js"></script>
    
      
 </body>

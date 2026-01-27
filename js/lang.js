@@ -1,6 +1,6 @@
 const i18n = {
     lang: localStorage.getItem("lang") || "es",
-    modules: ["general", "home", "about", "features", "contact", "footer","marquee","map","calendar"],
+    modules: ["general", "home", "about", "features", "contact", "footer","marquee","map","calendar","policy"],
     data: {},
 
     async load() {
