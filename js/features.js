@@ -127,7 +127,7 @@ function openGoogleMaps() {
 
 function openWhatsApp() {
     const message = 'Hola, me interesa Lions Houses. ¿Podrían darme más información?';
-    const phone = '+50688888888'; // Tu número
+    const phone = '+50688888888'; 
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
 
 }
