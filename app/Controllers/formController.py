@@ -3,7 +3,7 @@ from app.Services import email_service
 
 form_bp = Blueprint("Sform", __name__, url_prefix='/Sform')
 
-@form_bp.route("/send_form", methods=["POST"])
+@form_bp.route("/send_form", methods=["POST"]) 
 def SendForm():
     try:
         data = request.get_json()
