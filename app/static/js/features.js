@@ -1,16 +1,16 @@
-// features.js - Funcionalidades nuevas manteniendo simplicidad
+ 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Año actual en footer
+    //   Año actual en footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
     
-    // 2. Lightbox para galería
+    //   Lightbox para galería
     initLightbox();
     
-    // 4. Formularios
+    //   Formularios
     initForms();
     
-    // 5. Puntos interactivos en mapa
+    // Puntos interactivos en mapa
     initMapPoints();
 });
 

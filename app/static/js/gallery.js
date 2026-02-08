@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return; 
     }
 
-    const imagePath = "images/gallery/Lions_Houses_f"; 
+    
     
     for (let i = 3; i <= 27; i++) {
         const item = document.createElement('div');

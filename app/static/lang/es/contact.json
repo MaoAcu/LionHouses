@@ -26,8 +26,7 @@
       "datesLabel": "FECHAS DE INTERÉS",
       "datesPlaceholder": "Ej: 15-20 Marzo",
 
-      "messageLabel": "MENSAJE",
-      "messagePlaceholder": "Cuéntanos tus planes...",
+      "messageLabel": "MENSAJE", 
 
       "sendBtn": "ENVIAR MENSAJE"
     }

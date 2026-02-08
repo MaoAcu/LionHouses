@@ -37,29 +37,48 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
-    // Form submission
-    const form = document.querySelector('.contact-form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            
-            // Here you would typically send this to a server
-            console.log('Form submitted with data:', Object.fromEntries(formData));
-            
-            // Show success message
-            alert('¡Mensaje enviado! Te contactaremos pronto.');
-            this.reset();
-        });
-    }
+  
+   const form = document.getElementById('contactForm');
 
+if (form) {
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+       
+        data.subject = "Consulta Web Lions Houses"; 
+
+        try {
+            const response = await fetch('/Sform/send_form', {  
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                showModalContact('¡ÉXITO!', 'Hemos recibido tu consulta correctamente.');
+                form.reset();
+            } else {
+               
+                showModalContact('ERROR', result.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            showModalContact('ERROR', 'No pudimos enviar el mensaje. Intenta de nuevo.');
+        }
+    });
+}
     // WhatsApp button
     const whatsappBtn = document.querySelector('.btn-whatsapp');
     if (whatsappBtn) {
         whatsappBtn.addEventListener('click', function() {
-            const message = "¡Hola! Me interesa conocer más sobre Lions Houses.";
+            const message = "¡Hola! Me interesa conocer más sobre Lions House.";
             const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         });
@@ -94,7 +113,7 @@ let currentPos = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
     const track = document.getElementById('homeSliderTrack');
-    const imagePath = "images/gallery/Lions_Houses_f"; 
+  
     
    
     // Si track es null (no existe en esta página), salimos de la función.

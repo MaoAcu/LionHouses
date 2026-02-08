@@ -9,17 +9,17 @@
     <meta property="og:image" content="	https://lionhouses.onrender.com/images/Lions_Logo.jpg">
     <meta property="og:type" content="website">
     <title>Lions Houses - Tu Refugio en el Mar</title>
-    <link rel="stylesheet" href="css/lang.css">
-    <link rel="stylesheet" href="css/popup.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/Modal.css">
-    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lang.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Modal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/modalContact.css') }}">
        <!-- AOS CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    
-
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+     
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -43,7 +43,7 @@
                 autoplay
                 playsinline
                 preload="metadata">
-                <source src="images/Lion_Houses_Intro.mp4" type="video/mp4">
+                <source src="{{ url_for('static', filename='images/Lion_Houses_Intro.mp4') }}" type="video/mp4">
             </video>
 
        
@@ -66,21 +66,21 @@
         <div class="menu-bar">
             
            <div class="navbar-container">
-            <img src="images/Lions_Logo.jpg" class="location-avatar" alt="Foto del lugar">
+            <img src="{{ url_for('static', filename='images/Lions_Logo.jpg') }}" class="location-avatar" alt="Foto del lugar">
             <div class="navbar-logo">LIONS HOUSES</div>
             <button class="navbar-btn">RESERVAR</button>
             <div id="langSelector" class="lang-selector">
             <div class="lang-dropdown">
                 <div class="lang-option" data-lang="es">
-                    <img src="images/flags/es.jpeg"> <span>Español</span>
+                    <img src="{{ url_for('static', filename='images/flags/es.jpeg') }}"> <span>Español</span>
                 </div>
                 <div class="lang-option" data-lang="en">
-                    <img src="images/flags/en.png"> <span>English</span>
+                    <img src="{{ url_for('static', filename='images/flags/en.png') }}"> <span>English</span>
                 </div>
             </div>
         </div>
         </div>
-
+   </div>
     </nav>
 
 
@@ -133,8 +133,7 @@
         <h3 class="sidebar-title" data-i18n="home.sidebar_title2" data-aos="fade-left" data-aos-delay="600" data-i18n="home.sidebar_text2">Ubicación</h3>
         <p class="sidebar-text" data-i18n="home.sidebar_text2">
             Playa Bandera, Parrita.<br>
-            A 10 minutos de los monos.<br>
-            A 25 minutos del mar.<br>
+            A 5 minutos del mar.<br>
             A 0 minutos del estrés.
         </p>
         
@@ -181,9 +180,6 @@
             <span class="marquee-item" data-i18n="marquee.noStress">★ NO ACEPTAMOS ESTRÉS</span>
             <span class="marquee-item" data-i18n="marquee.fastWifi">★ WIFI MÁS RÁPIDO QUE TU JEFE</span>
             <span class="marquee-item" data-i18n="marquee.sunsets">★ ATARDECERES INCLUIDOS</span>
-           
-
-          
             <span class="marquee-item" data-i18n="marquee.noStress">★ NO ACEPTAMOS ESTRÉS</span>
             <span class="marquee-item" data-i18n="marquee.fastWifi">★ WIFI MÁS RÁPIDO QUE TU JEFE</span>
             <span class="marquee-item" data-i18n="marquee.sunsets">★ ATARDECERES INCLUIDOS</span>
@@ -293,7 +289,20 @@
     </div>
 </section>
 
-
+<div id="contactModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img src="http://lions-houses.com/gallery/Lions_Logo.jpg" alt="Lions Logo" class="modal-logo">
+        </div>
+        <div class="modal-body">
+            <h2 id="modalTitle">¡Solicitud Enviada!</h2>
+            <p id="modalMessage">Gracias por confiar en Lions Houses. Un asesor se pondrá en contacto contigo pronto.</p>
+        </div>
+        <div class="modal-footer">
+            <button onclick="closeModalContact()" class="btn-modal">ENTENDIDO</button>
+        </div>
+    </div>
+</div>
  
    <section class="calendar-section" data-aos="zoom-in-up" data-aos-delay="200">
     <div class="calendar-header">
@@ -327,7 +336,7 @@
                 data-aos="fade-up" 
                 data-aos-delay="200"
                 data-aos-anchor-placement="top-bottom">
-                <div class="gallery-image" style="background-image: url('images/Lion_Houses_living_room.jpeg');"></div>
+                <div class="gallery-image" style="background-image: url('https://mapatico.com/gallery/Lion_Houses_living_room.jpeg');"></div>
                 <div class="gallery-overlay">
                     <span class="gallery-label">LA SALA</span>
                    
@@ -339,7 +348,7 @@
                 data-aos-delay="300"
                 data-aos-anchor-placement="top-bottom">
             
-                <div class="gallery-image" style="background-image: url('images/Lion_Houses_Bedroom1.jpeg');"></div>
+                <div class="gallery-image" style="background-image: url('https://mapatico.com/gallery/Lion_Houses_Bedroom1.jpeg');"></div>
                 <div class="gallery-overlay">
                     <span class="gallery-label">EL NIDO</span>
                     
@@ -351,7 +360,7 @@
                 data-aos-delay="400"
                 data-aos-anchor-placement="top-bottom"> 
             
-                <div class="gallery-image" style="background-image: url('images/Lion_Houses_kitchen.jpeg');"></div>
+                <div class="gallery-image" style="background-image: url('https://mapatico.com/gallery/Lion_Houses_kitchen.jpeg');"></div>
                 <div class="gallery-overlay">
                     <span class="gallery-label">Cocina</span>
                     
@@ -365,7 +374,7 @@
     <div class="compact-grid" id="compactGallery"></div>
 
     <div class="gallery-link-container" data-aos="zoom-in">
-        <a href="gallery.html" class="btn-minimal">
+        <a href="{{ url_for('routes.gallery') }}" class="btn-minimal">
             VER GALERÍA COMPLETA  <i class="fas fa-chevron-right"></i>
         </a>
     </div>
@@ -376,8 +385,9 @@
         <h2 class="section-title">El Vecindario</h2>
         <div class="title-underline"></div> </div>
 
-    <div class="nearby-grid" id="nearby-list">
-        </div>
+    <div class="nearby-grid" id="nearby-list" data-img-base="{{ url_for('static', filename='images/vecinos/') }}"></div>
+        
+      
 </section>
    
     <section class="map-section">
@@ -476,7 +486,7 @@
 
             <div class="contact-email">
                 <i class="fas fa-envelope"></i>
-                <span data-i18n="contact.contact.email">info@lionshouses.com</span>
+                <span data-i18n="contact.contact.email">info@lions-houses.com</span>
             </div>
         </div>
 
@@ -496,14 +506,14 @@
             <div class="form-row">
                 <div class="form-group">
                     <label class="form-label" data-i18n="contact.contact.form.nameLabel">NOMBRE</label>
-                    <input type="text" class="form-input" 
+                    <input type="text" name="name" class="form-input" 
                            data-i18n="contact.contact.form.namePlaceholder" 
                            placeholder="Tu nombre" required>
                 </div>
 
                 <div class="form-group" data-aos="fade-up" data-aos-delay="100">
-                    <label class="form-label" data-i18n="contact.contact.form.lastNameLabel">APELLIDO</label>
-                    <input type="text" class="form-input" 
+                    <label class="form-label"  data-i18n="contact.contact.form.lastNameLabel">APELLIDO</label>
+                    <input type="text" name="lastname" class="form-input" 
                            data-i18n="contact.contact.form.lastNamePlaceholder" 
                            placeholder="Tu apellido">
                 </div>
@@ -511,7 +521,7 @@
 
             <div class="form-group" data-aos="fade-up" data-aos-delay="150">
                 <label class="form-label" data-i18n="contact.form.form.emailLabel">EMAIL</label>
-                <input type="email" class="form-input"
+                <input type="email" name="email" class="form-input"
                        data-i18n-="contact.contact.form.emailPlaceholder"
                        placeholder="tu@email.com"
                        required>
@@ -520,20 +530,20 @@
             <div class="form-row" data-aos="fade-up" data-aos-delay="200">
                 <div class="form-group">
                     <label class="form-label" data-i18n="contact.contact.form.datesLabel">FECHAS DE INTERÉS</label>
-                    <input type="text" class="form-input"
+                    <input type="text"  name="dates" class="form-input"
                            data-i18n="contact.contact.form.datesPlaceholder"
                            placeholder="Ej: 15-20 Marzo"
                            onfocus="this.type='date'" 
-                           onblur="if(!this.value)this.type='text'">
+                           onblur="if(!this.value)this.type='text'"
+                           required >
                 </div>
             </div>
 
             <div class="form-group" data-aos="fade-up" data-aos-delay="250">
-                <label class="form-label" data-i18n="contact.contact.form.messageLabel">MENSAJE</label>
+                <label class="form-label" data-i18n="contact.contact.form.messageLabel">Cuéntanos tus planes</label>
 
-                <textarea class="form-input form-textarea"
-                          data-i18n="contact.contact.form.messagePlaceholder"
-                          placeholder="Cuéntanos tus planes..."
+                <textarea class="form-input form-textarea" name="message"
+                          
                           required></textarea>
             </div>
 
@@ -609,7 +619,8 @@
 
         <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="js/animationAos.js"></script>
+  <script src="{{ url_for('static', filename='js/animationAos.js') }}"></script>
+
     <script>
 document.addEventListener("click", e => {
     if (e.target.classList.contains("lang-flag")) {
@@ -620,16 +631,21 @@ document.addEventListener("click", e => {
         
 </script>
    
-     <script src="js/animation.js"></script>
-    <script src="js/lang.js"></script>
-    <script src="js/ModalInfo.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/clima.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/features.js"></script>
-    <script src="js/gallery.js"></script>
-    <script src="js/vecindario.js"></script>
-   
+  <script>
+    const imagePath = "{{ url_for('static', filename='images/gallery/Lions_Houses_f') }}"
+    const ES ="{{ url_for('static', filename='images/flags/es.jpeg') }}"
+    const EN ="{{ url_for('static', filename='images/flags/en.png') }}"
+  </script>
+    <script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lang.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/ModalInfo.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/modal.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/clima.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/features.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/gallery.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/vecindario.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/modalContact.js') }}"></script>  
      
 </body>
 </html>

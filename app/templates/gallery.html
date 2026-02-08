@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería - Lion Houses</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
 
 <header style="padding: 20px; text-align: center;">
-    <a href="index.html" style="text-decoration: none; color: #333;">
+    <a href="{{ url_for('routes.inicio') }}" style="text-decoration: none; color: #333;">
         <i class="fas fa-arrow-left"></i> Volver al Inicio
     </a>
     <h1 style="margin-top: 10px;">Galería Lion Houses</h1>
@@ -20,7 +21,7 @@
     <div class="gallery-grid" id="dynamic-gallery">
         <div class="gallery-item" onclick="openLightbox(this)">
             <span class="video-badge"><i class="fas fa-video"></i> Video Tour</span>
-            <video src="images/gallery/video1.mp4" muted loop playsinline></video> 
+            <video src="{{ url_for('static', filename='images/gallery/video1.mp4') }}" muted loop playsinline></video> 
             <div class="overlay"><i class="fas fa-play"></i></div>
         </div>
         
@@ -33,7 +34,9 @@
         </div>
 </div>
 
-<script src="js/gallery.js"></script>
-
+<script>
+    const imagePath = "{{ url_for('static', filename='images/gallery/Lions_Houses_f') }}"
+</script>
+<script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
 </body>
 </html>

@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     const nearbyList = document.getElementById('nearby-list');
+    if (!nearbyList) return;
+
+    const baseImg = nearbyList.dataset.imgBase;
 
     const locales = [
         {
@@ -7,36 +11,39 @@ document.addEventListener("DOMContentLoaded", () => {
             info: "Bar y Restaurante familiar con un ambiente súper agradable frente al mar.",
             distancia: "a 4 min caminando",
             icono: "fa-utensils",
-            img1: "images/vecinos/AlmaMarina1.jpg",
-            img2: "images/vecinos/AlmaMarina2.jpg"
+            img1: "AlmaMarina1.jpg",
+            img2: "AlmaMarina2.jpg"
         },
         {
             nombre: "Cafetería Centeno",
             info: "Deliciosa repostería artesanal y el mejor café para iniciar tu mañana.",
             distancia: "a 4 min caminando",
             icono: "fa-coffee",
-            img1: "images/vecinos/CafeteriaCenteno1.jpg",
-            img2: "images/vecinos/CafeteriaCenteno2.jpg"
+            img1: "CafeteriaCenteno1.jpg",
+            img2: "CafeteriaCenteno2.jpg"
         },
         {
             nombre: "La Esquinita del Sabor",
             info: "Sabores auténticos locales que te harán sentir como en casa.",
             distancia: "2 min en carro / 23 min caminando",
             icono: "fa-moped",
-            img1: "images/vecinos/Esquinita_Sabor1.jpg",
-            img2: "images/vecinos/Esquinita_Sabor2.jpg"
+            img1: "Esquinita_Sabor1.jpg",
+            img2: "Esquinita_Sabor2.jpg"
         }
     ];
 
     locales.forEach((local) => {
         const card = document.createElement('div');
         card.className = 'nearby-card-v2';
-        
+
         card.innerHTML = `
             <div class="card-media">
                 <div class="images-wrapper">
-                    <img src="${local.img1}" class="slide-img active" onerror="this.src='https://placehold.co/400x300?text=Lion+Houses'">
-                    <img src="${local.img2}" class="slide-img" onerror="this.src='https://placehold.co/400x300?text=Local+Sercano'">
+                    <img src="${baseImg}${local.img1}" class="slide-img active"
+                         onerror="this.src='https://placehold.co/400x300?text=Lion+Houses'">
+
+                    <img src="${baseImg}${local.img2}" class="slide-img"
+                         onerror="this.src='https://placehold.co/400x300?text=Local+Cercano'">
                 </div>
                 <div class="slider-dots">
                     <span class="dot active"></span>
@@ -53,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
 
-        // Lógica simple para que las fotos cambien al pasar el mouse
         card.addEventListener('mouseenter', () => {
             const imgs = card.querySelectorAll('.slide-img');
             const dots = card.querySelectorAll('.dot');

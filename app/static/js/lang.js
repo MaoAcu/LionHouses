@@ -1,6 +1,7 @@
+
 const i18n = {
     lang: localStorage.getItem("lang") || "es",
-    modules: ["general", "home", "about", "features", "contact", "footer","marquee","map","calendar","policy"],
+    modules: ["general", "home", "about", "features", "contact", "footer", "marquee", "map", "calendar", "policy"],
     data: {},
 
     async load() {
@@ -8,7 +9,9 @@ const i18n = {
 
         for (const module of this.modules) {
             try {
-                const res = await fetch(`lang/${this.lang}/${module}.json`);
+                const res = await fetch(`/static/lang/${this.lang}/${module}.json`);
+                if (!res.ok) throw new Error("No encontrado");
+
                 const json = await res.json();
                 this.data[module] = json;
             } catch (e) {
@@ -53,8 +56,8 @@ const i18n = {
 
     updateSelectedFlag() {
         const flagPath = {
-            es: "images/flags/es.jpeg",
-            en: "images/flags/en.png"
+            es: ES,
+            en: EN
         };
 
         const code = this.lang.toUpperCase();
@@ -73,7 +76,7 @@ selected.classList.add("lang-selected");
 
 // Iniciar según idioma guardado
 selected.innerHTML = `
-    <img src="images/flags/es.jpeg">
+    <img src="${ES}">
     <span>${i18n.lang.toUpperCase()}</span>
 `;
 langSelector.prepend(selected);
