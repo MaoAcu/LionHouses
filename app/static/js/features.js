@@ -27,7 +27,7 @@ function initLightbox() {
             const imgSrc = this.getAttribute('data-image');
             const label = this.getAttribute('data-label');
             
-            lightboxImg.src = `/images/${imgSrc}`;
+            lightboxImg.src = `${imgSrc}`;
             lightboxCaption.textContent = label;
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -69,9 +69,7 @@ function initForms() {
                 return;
             }
             
-            // Simular envío (aquí conectarías con tu backend)
-            showConfirmation('¡Mensaje enviado! Te contactaremos pronto.', 'success');
-            
+           
             // Limpiar formulario
             this.reset();
             
@@ -91,22 +89,38 @@ function initForms() {
         }, 5000);
     }
     
-    // Pregunta rápida
-    const quickQuestionBtn = document.querySelector('.btn-quick-question');
-    if (quickQuestionBtn) {
-        quickQuestionBtn.addEventListener('click', function() {
-            const textarea = this.previousElementSibling;
-            if (textarea.value.trim()) {
-                alert('Pregunta enviada. Te responderemos pronto por email.');
-                textarea.value = '';
-            } else {
-                alert('Por favor escribe tu pregunta.');
-            }
-        });
-    }
+    // Pregunta rapida
+      const quickQuestionBtn = document.querySelector('.btn-quick-question'); // El botón "Enviar pregunta"
+
+if (quickQuestionBtn) {
+    quickQuestionBtn.addEventListener('click', function() {
+        const textarea = this.previousElementSibling; // El área de texto
+        const pregunta = textarea.value.trim();
+        
+        
+        const miTelefono = "50612345678"; 
+        
+        if (pregunta) {
+            // se codigica el texto
+            const mensajeFinal = encodeURIComponent(`Hola Lion Houses, tengo una pregunta: ${pregunta}`);
+            
+            // se crea el enlace a WhatsApp
+            const whatsappUrl = `https://wa.me/${miTelefono}?text=${mensajeFinal}`;
+            
+            // abre whsp en una ventana nueva
+            window.open(whatsappUrl, '_blank');
+            
+            // limpia el campo despues de enviar
+            textarea.value = '';
+        } else {
+            alert('Por favor escribe tu pregunta antes de enviar.');
+        }
+    });
+  }
 }
 
-// Mapa interactivo simple
+
+ 
 function initMapPoints() {
     document.querySelectorAll('.point').forEach(point => {
         point.addEventListener('click', function() {

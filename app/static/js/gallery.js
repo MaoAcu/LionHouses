@@ -1,11 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const galleryGrid = document.getElementById('dynamic-gallery');
     
-    // ESCUDO 1: Si no existe el contenedor, no intentes crear la galería
-    if (!galleryGrid) {
-        console.log("Sistema: Galería dinámica no detectada en esta página.");
-        return; 
-    }
+     
 
     
     
@@ -15,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.setAttribute('data-aos', 'fade-up');
 
         item.innerHTML = `
-            <img src="${imagePath}${i}.jpeg" alt="Lions Houses ${i}" loading="lazy" onerror="this.parentElement.style.display='none'">
+            <img src="${imagePath}${i}.webp" alt="Lions Houses ${i}" loading="lazy" onerror="this.parentElement.style.display='none'">
             <div class="overlay"><i class="fas fa-search-plus"></i></div>
         `;
 

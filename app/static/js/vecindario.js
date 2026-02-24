@@ -11,24 +11,24 @@ document.addEventListener("DOMContentLoaded", () => {
             info: "Bar y Restaurante familiar con un ambiente súper agradable frente al mar.",
             distancia: "a 4 min caminando",
             icono: "fa-utensils",
-            img1: "AlmaMarina1.jpg",
-            img2: "AlmaMarina2.jpg"
+            img1: "AlmaMarina1.webp",
+            img2: "AlmaMarina2.webp"
         },
         {
             nombre: "Cafetería Centeno",
             info: "Deliciosa repostería artesanal y el mejor café para iniciar tu mañana.",
             distancia: "a 4 min caminando",
             icono: "fa-coffee",
-            img1: "CafeteriaCenteno1.jpg",
-            img2: "CafeteriaCenteno2.jpg"
+            img1: "CafeteriaCenteno1.webp",
+            img2: "CafeteriaCenteno2.webp"
         },
         {
             nombre: "La Esquinita del Sabor",
             info: "Sabores auténticos locales que te harán sentir como en casa.",
             distancia: "2 min en carro / 23 min caminando",
             icono: "fa-moped",
-            img1: "Esquinita_Sabor1.jpg",
-            img2: "Esquinita_Sabor2.jpg"
+            img1: "Esquinita_Sabor1.webp",
+            img2: "Esquinita_Sabor2.webp"
         }
     ];
 

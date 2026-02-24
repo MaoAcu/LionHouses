@@ -8,10 +8,10 @@ routes_bp = Blueprint("routes", __name__)
 @routes_bp.route('/')
 def index():
    
-    return render_template('index.html')
+    return render_template('animacion.html')
 
-@routes_bp.route('/gallery', endpoint="gallery")
-def Gallery():
+@routes_bp.route('/Vgallery', endpoint="Vgallery")
+def VGallery():
    
     return render_template('gallery.html')
 

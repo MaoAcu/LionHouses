@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from app.Services import email_service
+import time
 
 form_bp = Blueprint("Sform", __name__, url_prefix='/Sform')
 
@@ -22,7 +23,7 @@ def SendForm():
         if not email or not message:
             return jsonify({"success": False, "message": "Faltan campos obligatorios"}), 400
        
-       
+ 
         status = email_service.SendContactForm(
             name=full_name,
             email=email,
@@ -30,7 +31,7 @@ def SendForm():
             message=message,
             dates=dates
         ) 
-        
+        time.sleep(6)
         if status:
             return jsonify({
                 "success": True,
