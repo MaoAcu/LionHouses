@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const slide = document.createElement('div');
         slide.className = 'gallery-item-slide';
         slide.innerHTML = `
-            <img src="${imagePath}${i}.web" alt="Habitación ${i}">
+            <img src="${imagePath}${i}.webp" alt="Habitación ${i}">
             <div class="gallery-overlay">
                 <span class="gallery-label">LION HOUSES</span>
             </div>

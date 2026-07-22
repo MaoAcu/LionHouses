@@ -3,40 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería - Lion Houses</title>
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="description" content="Galería de fotos de Lions Houses - Casa vacacional en Playa Bandera, Parrita, Costa Rica. Explora nuestras habitaciones, cocina, sala y jardín.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lions-houses.com/Vgallery">
+    <link rel="alternate" hreflang="es" href="https://lions-houses.com/Vgallery">
+    <link rel="alternate" hreflang="en" href="https://lions-houses.com/Vgallery?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://lions-houses.com/Vgallery">
+    <meta property="og:title" content="Galería - Lions Houses">
+    <meta property="og:description" content="Explora las fotos de nuestra casa vacacional en Playa Bandera, Parrita, Costa Rica.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/link_lions.webp') }}">
+    <meta property="og:url" content="https://lions-houses.com/Vgallery">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CR">
+    <meta property="og:site_name" content="Lions Houses">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Galería - Lions Houses">
+    <meta name="twitter:description" content="Explora nuestra casa vacacional en Playa Bandera, Costa Rica.">
+    <meta name="twitter:image" content="{{ url_for('static', filename='images/link_lions.webp') }}">
+    <title>Galería - Lions Houses | Playa Bandera, Parrita</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Galería Lions Houses",
+      "description": "Galería de fotos de Lions Houses en Playa Bandera, Parrita, Costa Rica.",
+      "url": "https://lions-houses.com/Vgallery",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Lions Houses",
+        "url": "https://lions-houses.com"
+      }
+    }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
 
-<header style="padding: 20px; text-align: center;">
-    <a href="{{ url_for('routes.inicio') }}" style="text-decoration: none; color: #333;">
+<header class="gallery-header">
+    <a href="{{ url_for('routes.inicio') }}" class="back-link">
         <i class="fas fa-arrow-left"></i> Volver al Inicio
     </a>
-    <h1 style="margin-top: 10px;">Galería Lion Houses</h1>
+    <h1>Galería</h1>
+    <span class="gallery-counter" id="galleryCount"></span>
 </header>
 
 <div class="gallery-container">
     <div class="gallery-grid" id="dynamic-gallery">
-        <div class="gallery-item" onclick="openLightbox(this)">
-            <span class="video-badge"><i class="fas fa-video"></i> Video Tour</span>
-            <video src="{{ url_for('static', filename='images/gallery/video1.webm') }}" muted loop playsinline></video> 
-            <div class="overlay"><i class="fas fa-play"></i></div>
+        <div class="gallery-card tall" onclick="openLightbox(this)" data-index="0">
+            <span class="video-badge-card"><i class="fas fa-video"></i> Video Tour</span>
+            <video src="{{ url_for('static', filename='images/gallery/video1.webm') }}" muted loop playsinline preload="metadata"></video>
+            <div class="card-overlay">
+                <span class="card-icon"><i class="fas fa-play-circle"></i></span>
+                <span class="card-label">VIDEO TOUR</span>
+            </div>
         </div>
-        
-        </div>
+    </div>
 </div>
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close-lightbox">&times;</span>
-    <div id="lightbox-media-container" onclick="event.stopPropagation()">
-        </div>
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-nav prev" onclick="event.stopPropagation();navigateLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-nav next" onclick="event.stopPropagation();navigateLightbox(1)"><i class="fas fa-chevron-right"></i></button>
+    <div id="lightbox-media-container" onclick="event.stopPropagation()"></div>
+    <span class="lightbox-counter" id="lightboxCounter"></span>
 </div>
 
 <script>
     const imagePath = "{{ url_for('static', filename='images/gallery/Lions_Houses_f') }}"
 </script>
-<script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+<script src="{{ url_for('static', filename='js/gallery.js') }}" defer></script>
 </body>
 </html>

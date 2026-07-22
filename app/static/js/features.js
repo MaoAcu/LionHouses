@@ -1,17 +1,11 @@
  
 
 document.addEventListener('DOMContentLoaded', function() {
-    //   Año actual en footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
-    
-    //   Lightbox para galería
     initLightbox();
-    
-    //   Formularios
     initForms();
-    
-    // Puntos interactivos en mapa
     initMapPoints();
+    initCompactGallery();
 });
 
 // Lightbox simple
@@ -20,35 +14,54 @@ function initLightbox() {
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.querySelector('.lightbox-caption');
     const closeBtn = document.querySelector('.lightbox-close');
-    
-    // Abrir lightbox al hacer clic en imágenes de galería
-    document.querySelectorAll('.gallery-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const imgSrc = this.getAttribute('data-image');
-            const label = this.getAttribute('data-label');
-            
-            lightboxImg.src = `${imgSrc}`;
-            lightboxCaption.textContent = label;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+    const prevBtn = document.querySelector('.lb-prev');
+    const nextBtn = document.querySelector('.lb-next');
+    const counter = document.getElementById('lbCounter');
+
+    const items = Array.from(document.querySelectorAll('.gallery-hero-item'));
+    let currentIndex = 0;
+
+    function open(index) {
+        if (index < 0 || index >= items.length) return;
+        currentIndex = index;
+        const item = items[index];
+        lightboxImg.src = item.getAttribute('data-image');
+        lightboxCaption.textContent = item.getAttribute('data-label');
+        if (counter) counter.textContent = `${index + 1} / ${items.length}`;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    items.forEach((item, i) => {
+        item.addEventListener('click', () => open(i));
     });
-    
-    // Cerrar lightbox
-    closeBtn.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox) closeLightbox();
-    });
-    
-    // Cerrar con ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeLightbox();
-    });
-    
+
+    function navigate(dir) {
+        let next = currentIndex + dir;
+        if (next < 0) next = items.length - 1;
+        if (next >= items.length) next = 0;
+        open(next);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); navigate(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); navigate(1); });
+
     function closeLightbox() {
         lightbox.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') navigate(1);
+        if (e.key === 'ArrowLeft') navigate(-1);
+    });
 }
 
 // Formularios simples
@@ -145,6 +158,27 @@ function openWhatsApp() {
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
 
 }
-   
+
+function initCompactGallery() {
+    const container = document.getElementById('compactGallery');
+    if (!container) return;
+
+    const previewImages = [
+        { src: '3', label: 'Sala' },
+        { src: '8', label: 'Dormitorio' },
+        { src: '12', label: 'Terraza' },
+        { src: '18', label: 'Vista' }
+    ];
+
+    previewImages.forEach((img, index) => {
+        const item = document.createElement('div');
+        item.className = 'compact-item';
+        item.setAttribute('data-aos', 'fade-up');
+        item.setAttribute('data-aos-delay', String(index * 60));
+        item.innerHTML = `<img src="${imagePath}${img.src}.webp" alt="Lions Houses ${img.label}" loading="lazy">`;
+        item.onclick = function() { window.location.href = '/Vgallery'; };
+        container.appendChild(item);
+    });
+}
 
  
