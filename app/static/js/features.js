@@ -1,7 +1,13 @@
  
 
+(function() {
+    var el = document.getElementById('currentYear');
+    if (el) el.textContent = new Date().getFullYear();
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    var el = document.getElementById('currentYear');
+    if (el) el.textContent = new Date().getFullYear();
     initLightbox();
     initForms();
     initMapPoints();

@@ -7,39 +7,46 @@
     <meta name="description" content="Lions Houses - Casa vacacional en Playa Bandera, Parrita, Costa Rica. Tu refugio en el mar. Reserva en Airbnb.">
     <meta name="keywords" content="casa vacacional, playa bandera, parrita, costa rica, alquiler vacacional, airbnb, vrbo, pura vida">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lions-houses.com">
-    <link rel="alternate" hreflang="es" href="https://lions-houses.com">
-    <link rel="alternate" hreflang="en" href="https://lions-houses.com?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://lions-houses.com">
+
+    <!-- Canonical & Alternate Language Tags -->
+    <link rel="canonical" href="https://lions-houses.com/">
+    <link rel="alternate" hreflang="es" href="https://lions-houses.com/"/>
+    <link rel="alternate" hreflang="en" href="https://lions-houses.com/?lang=en"/>
+    <link rel="alternate" hreflang="x-default" href="https://lions-houses.com/"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lions Houses">
     <meta property="og:title" content="Lions Houses - Refugio en Playa Bandera, Parrita">
     <meta property="og:description" content="Ven y disfruta. Aquí tu espíritu despierta y ruge con la fuerza de un león.">
-    <meta property="og:image" content="{{ url_for('static', filename='images/link_lions.webp') }}">
-    <meta property="og:url" content="https://lions-houses.com">
-    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ url_for('static', filename='images/link_lions.webp', _external=True) }}">
+    <meta property="og:url" content="https://lions-houses.com/">
     <meta property="og:locale" content="es_CR">
-    <meta property="og:site_name" content="Lions Houses">
+
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lions Houses - Refugio en Playa Bandera, Parrita">
     <meta name="twitter:description" content="Casa vacacional en Costa Rica. Jardín privado, A/C, WiFi veloz. Reserva en Airbnb.">
-    <meta name="twitter:image" content="{{ url_for('static', filename='images/link_lions.webp') }}">
+    <meta name="twitter:image" content="{{ url_for('static', filename='images/link_lions.webp', _external=True) }}">
+
     <title>Lions Houses - Casa Vacacional en Playa Bandera, Parrita, Costa Rica</title>
+
+    <!-- Datos Estructurados Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Lions Houses",
-      "url": "https://lions-houses.com",
-      "description": "Casa vacacional en Playa Bandera, Parrita, Costa Rica. Tu refugio en el mar.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://lions-houses.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "url": "https://lions-houses.com/",
+      "description": "Casa vacacional en Playa Bandera, Parrita, Costa Rica. Tu refugio en el mar."
     }
     </script>
+
+    <!-- Recasos y Estilos -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
     <link rel="preload" href="{{ url_for('static', filename='images/Lion_Houses_Intro.mp4') }}" as="video" type="video/mp4">
+    
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 </head>
 <body>
@@ -56,14 +63,15 @@
 
             <div class="loader"></div>
 
-            <div class="skip-animation" id="skipBtn">
+            <!-- Cambiado de <div> a <a> para garantizar rastreo de Google -->
+            <a href="{{ url_for('routes.inicio') }}" class="skip-animation" id="skipBtn">
                 Saltar animación
-            </div>
+            </a>
         </div>
     </section>
 
     <script>
-        const URL_PAGINA ="{{ url_for('routes.inicio') }}";
+        const URL_PAGINA = "{{ url_for('routes.inicio') }}";
     </script>
     <script src="{{ url_for('static', filename='js/animation.js') }}" defer></script>
 </body>

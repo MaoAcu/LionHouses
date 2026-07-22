@@ -6,39 +6,50 @@
     <meta name="theme-color" content="#2c3e50">
     <meta name="description" content="Galería de fotos de Lions Houses - Casa vacacional en Playa Bandera, Parrita, Costa Rica. Explora nuestras habitaciones, cocina, sala y jardín.">
     <meta name="robots" content="index, follow">
+
+    <!-- Canonical & Alternate Language Tags -->
     <link rel="canonical" href="https://lions-houses.com/Vgallery">
     <link rel="alternate" hreflang="es" href="https://lions-houses.com/Vgallery">
     <link rel="alternate" hreflang="en" href="https://lions-houses.com/Vgallery?lang=en">
     <link rel="alternate" hreflang="x-default" href="https://lions-houses.com/Vgallery">
-    <meta property="og:title" content="Galería - Lions Houses">
-    <meta property="og:description" content="Explora las fotos de nuestra casa vacacional en Playa Bandera, Parrita, Costa Rica.">
-    <meta property="og:image" content="{{ url_for('static', filename='images/link_lions.webp') }}">
-    <meta property="og:url" content="https://lions-houses.com/Vgallery">
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_CR">
     <meta property="og:site_name" content="Lions Houses">
+    <meta property="og:title" content="Galería - Lions Houses | Playa Bandera">
+    <meta property="og:description" content="Explora las instalaciones de nuestra casa vacacional en Playa Bandera, Parrita, Costa Rica.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/link_lions.webp', _external=True) }}">
+    <meta property="og:url" content="https://lions-houses.com/Vgallery">
+    <meta property="og:locale" content="es_CR">
+
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Galería - Lions Houses">
+    <meta name="twitter:title" content="Galería - Lions Houses | Playa Bandera">
     <meta name="twitter:description" content="Explora nuestra casa vacacional en Playa Bandera, Costa Rica.">
-    <meta name="twitter:image" content="{{ url_for('static', filename='images/link_lions.webp') }}">
+    <meta name="twitter:image" content="{{ url_for('static', filename='images/link_lions.webp', _external=True) }}">
+
     <title>Galería - Lions Houses | Playa Bandera, Parrita</title>
+
+     
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "CollectionPage",
+      "@type": "ImageGallery",
       "name": "Galería Lions Houses",
-      "description": "Galería de fotos de Lions Houses en Playa Bandera, Parrita, Costa Rica.",
+      "description": "Colección de fotos e itinerario visual de la casa vacacional Lions Houses en Playa Bandera, Parrita, Costa Rica.",
       "url": "https://lions-houses.com/Vgallery",
       "isPartOf": {
         "@type": "WebSite",
         "name": "Lions Houses",
-        "url": "https://lions-houses.com"
+        "url": "https://lions-houses.com/"
       }
     }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+
+    <!-- Estilos y Fuentes -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
 </head>
 <body>
 
@@ -52,6 +63,7 @@
 
 <div class="gallery-container">
     <div class="gallery-grid" id="dynamic-gallery">
+        <!-- Video introductorio / Tour -->
         <div class="gallery-card tall" onclick="openLightbox(this)" data-index="0">
             <span class="video-badge-card"><i class="fas fa-video"></i> Video Tour</span>
             <video src="{{ url_for('static', filename='images/gallery/video1.webm') }}" muted loop playsinline preload="metadata"></video>
@@ -61,8 +73,18 @@
             </div>
         </div>
     </div>
+
+    <!-- Fallback de fotos para indexación de Googlebot sin JavaScript -->
+    <noscript>
+        <div class="gallery-grid">
+            <img src="{{ url_for('static', filename='images/gallery/Lions_Houses_f1.webp') }}" alt="Habitación principal Lions Houses">
+            <img src="{{ url_for('static', filename='images/gallery/Lions_Houses_f2.webp') }}" alt="Jardín y exteriores Lions Houses">
+            <img src="{{ url_for('static', filename='images/gallery/Lions_Houses_f3.webp') }}" alt="Cocina equipada Lions Houses">
+        </div>
+    </noscript>
 </div>
 
+<!-- Lightbox Modal -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="lightbox-close">&times;</span>
     <button class="lightbox-nav prev" onclick="event.stopPropagation();navigateLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
@@ -72,7 +94,7 @@
 </div>
 
 <script>
-    const imagePath = "{{ url_for('static', filename='images/gallery/Lions_Houses_f') }}"
+    const imagePath = "{{ url_for('static', filename='images/gallery/Lions_Houses_f') }}";
 </script>
 <script src="{{ url_for('static', filename='js/gallery.js') }}" defer></script>
 </body>
