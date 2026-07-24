@@ -41,7 +41,7 @@
       "description": "Casa vacacional en Playa Bandera, Parrita, Costa Rica. Refugio costero con jardín privado, A/C, WiFi veloz y cocina completa.",
       "url": "https://lions-houses.com/inicio",
       "image": "https://lions-houses.com/static/images/link_lions.webp",
-      "logo": "https://lions-houses.com/gallery/Lions_Logo.webp",
+      "logo": "https://lions-houses.com/static/images/Lions_Logo.webp",
       "telephone": "+506-0000-0000",
       "email": "info@lions-houses.com",
       "priceRange": "$$",
@@ -79,27 +79,56 @@
 
     <!-- Favicon & Estilos -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/lang.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/popup.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Modal.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/modalContact.css') }}">
+
     
-    <!-- Librerías Externas -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://api.openweathermap.org">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+   
+    <link rel="preload" as="image" href="{{ url_for('static', filename='images/Lion_Houses_main2.webp') }}" fetchpriority="high">
+
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Critical CSS inline -->
+    <style>
+        *,::before,::after{box-sizing:border-box;margin:0;padding:0}:root{--primary-light:#F2E8DE;--primary-dark:#1A3A2A;--accent-tan:#E6D5C3;--accent-tan-dark:#DFD3C3;--border:#000;--text-light:#000;--text-dark:#fff}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background-color:var(--primary-light);color:var(--text-light);line-height:1.6;overflow-x:hidden;overflow-y:auto}.italic{font-style:italic}.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;backdrop-filter:blur(10px);background:rgba(242,232,222,.9);border-bottom:1px solid var(--border)}.navbar-container{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 1.5rem;padding-left:0}.navbar-logo{font-weight:700;font-size:.9rem;letter-spacing:.15em}.navbar-btn{background:0 0;border:2px solid var(--border);padding:.7rem 1.5rem;border-radius:50px;cursor:pointer;font-size:.85rem;font-weight:700;letter-spacing:.1em;transition:all .3s ease}.navbar-btn:hover{background-color:var(--text-light);color:var(--primary-light)}.location-avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 4px rgba(0,0,0,.1);cursor:pointer;transition:transform .3s ease}.hero{display:grid;grid-template-columns:1fr;min-height:100vh;margin-top:70px;border-bottom:1px solid var(--border);overflow:hidden}.hero-left{display:flex;flex-direction:column;justify-content:space-between;padding:2rem;border-right:1px solid var(--border)}.hero-title{font-size:clamp(2.5rem,8vw,4rem);font-family:'Georgia',serif;line-height:.9;font-weight:700}.hero-description{font-size:1.1rem;max-width:350px;line-height:1.6;font-weight:500;margin:2rem 0}.hero-footer{margin-top:auto}.divider{height:1px;background-color:var(--border);margin-bottom:1.5rem}.hero-info{display:flex;justify-content:space-between;font-size:.75rem;letter-spacing:.15em;font-weight:700;text-transform:uppercase}.hero-center{position:relative;background-size:cover;background-position:center;border-right:1px solid var(--border);display:none;background-image:url("{{ url_for('static', filename='images/Lion_Houses_main2.webp') }}")}.hero-overlay{position:absolute;inset:0;background-color:rgba(0,0,0,.1);transition:background-color .3s ease}.hero-right{background-color:var(--primary-dark);color:var(--primary-light);padding:2rem;display:flex;flex-direction:column;justify-content:center;gap:2rem}.hero-quote{position:absolute;bottom:2rem;left:2rem;color:#fff;max-width:300px;font-family:'Georgia',serif;font-size:1.3rem;font-style:italic;line-height:1.4}.sidebar-title{font-family:'Georgia',serif;font-size:1.5rem;margin:1rem 0 .5rem}.sidebar-text{opacity:.9;line-height:1.6;font-size:.95rem}.btn-availability{background-color:var(--primary-light);color:var(--primary-dark);border:none;padding:1rem 2rem;font-weight:700;cursor:pointer;transition:all .3s ease;width:100%;margin-top:1rem}.lang-selector{position:relative;margin-left:auto;margin-right:10px;cursor:pointer;user-select:none;font-size:12px}.lang-selector .lang-selected{display:flex;align-items:center;background:#ffffff20;padding:6px 10px;border-radius:6px;backdrop-filter:blur(8px);border:1px solid #ffffff40;gap:6px;transition:background .2s}.lang-selector .lang-selected:hover{background:#ffffff35}.lang-selector .lang-selected img{width:18px;height:18px;border-radius:4px}.lang-dropdown{position:absolute;top:45px;right:0;background:#fff;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,.15);padding:8px 0;width:130px;opacity:0;pointer-events:none;transform:translateY(-10px);transition:.25s ease;z-index:1000}.lang-selector.open .lang-dropdown{opacity:1;pointer-events:auto;transform:translateY(0)}.lang-option{display:flex;align-items:center;padding:8px 12px;gap:8px;cursor:pointer;transition:background .2s}.lang-option:hover{background:#f2f2f2}.lang-option img{width:18px;height:18px;object-fit:cover;border-radius:4px}.menu-bar{display:block}.hero-weather{display:flex;align-items:center;gap:8px;font-size:.9rem;margin:1rem 0}.rules-mini{font-size:.85rem;line-height:1.8;margin-top:1rem}@media(max-width:767px){.hero-left{border-right:none;padding:4rem 1.5rem 2rem}.hero-right{padding:2rem 1.5rem}.navbar-container{padding:.8rem 1rem}}@media(min-width:1024px){.hero{grid-template-columns:1fr 1.2fr .8fr}.hero-center{display:block}}
+    </style>
+
+    <!-- Full stylesheet loaded asynchronously -->
+    <link rel="preload" href="{{ url_for('static', filename='css/styles.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"></noscript>
+
+    <!-- Non-critical CSS deferred -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lang.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/popup.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Modal.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modalContact.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" media="print" onload="this.media='all'">
+    <!-- Font Awesome icons (subset) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fa-icons.css') }}" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/lang.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/popup.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Modal.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/modalContact.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/fa-icons.css') }}">
+    </noscript>
 </head>
 <body>
 
-    <nav class="navbar" data-aos="fade-down" data-aos-duration="800" data-aos-delay="500">
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="800" data-aos-delay="500" aria-label="Navegación principal">
    
         
         <!-- Barra de menú superior -->
         <div class="menu-bar">
             
            <div class="navbar-container">
-            <img src="https://lions-houses.com/gallery/Lions_Logo.jpg" class="location-avatar" alt="Lions Logo">
+            <img src="{{ url_for('static', filename='images/Lions_Logo.webp') }}" class="location-avatar" alt="Lions Logo">
             <div class="navbar-logo">LIONS HOUSES</div>
             <button class="navbar-btn">RESERVAR</button>
             <div id="langSelector" class="lang-selector">
@@ -116,8 +145,8 @@
    </div>
     </nav>
 
+    <main>
 
-    
     <section class="hero">
     <div class="hero-left">
         <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
@@ -158,12 +187,12 @@
     </div>
 
     <div class="hero-right">
-        <h3 class="sidebar-title" data-i18n="home.sidebar_title1" data-aos="fade-left" data-aos-delay="300" data-i18n="home.sidebar_title1">La Guarida</h3>
+        <h2 class="sidebar-title" data-i18n="home.sidebar_title1" data-aos="fade-left" data-aos-delay="300" data-i18n="home.sidebar_title1">La Guarida</h2>
         <p class="sidebar-text" data-i18n="home.sidebar_text1" data-aos="fade-left" data-aos-delay="400" data-i18n="home.sidebar_text1">
             Un refugio costero donde la única caza permitida es la de atardeceres y cocos fríos.
         </p>
 
-        <h3 class="sidebar-title" data-i18n="home.sidebar_title2" data-aos="fade-left" data-aos-delay="600" data-i18n="home.sidebar_text2">Ubicación</h3>
+        <h2 class="sidebar-title" data-i18n="home.sidebar_title2" data-aos="fade-left" data-aos-delay="600" data-i18n="home.sidebar_text2">Ubicación</h2>
         <p class="sidebar-text" data-i18n="home.sidebar_text2">
             Playa Bandera, Parrita.<br>
             A 5 minutos del mar.<br>
@@ -325,7 +354,7 @@
 <div id="contactModal" class="modal-overlay">
     <div class="modal-content">
         <div class="modal-header">
-            <img src="https://lions-houses.com/gallery/Lions_Logo.webp" alt="Lions Logo" class="modal-logo">
+            <img src="{{ url_for('static', filename='images/Lions_Logo.webp') }}" alt="Lions Logo" class="modal-logo">
         </div>
         <div class="modal-body">
             <h2 id="modalTitle">¡Solicitud Enviada!</h2>
@@ -416,15 +445,13 @@
     </div>
     
    <div class="map-container">
-    <div class="map-simple" data-aos="fade-right" data-aos-delay="200">
-       <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3934.8215598258594!2d-84.36957492812971!3d9.524227481046978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzEnMjcuMiJOIDg0wrAyMicwMS4yIlc!5e0!3m2!1ses!2scr!4v1771080601744!5m2!1ses!2scr" 
-       width="600" 
-       height="450" 
-       style="border:0;" 
-       allowfullscreen="" 
-       loading="lazy" 
-       referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <div class="map-simple" data-aos="fade-right" data-aos-delay="200" id="mapContainer">
+        <div class="map-placeholder" id="mapPlaceholder" style="width:600px;height:450px;max-width:100%;background:#e8e0d5;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:4px;">
+            <span style="font-size:1rem;color:#666;display:flex;align-items:center;gap:8px;">
+                <i class="fas fa-map-marker-alt"></i> <span data-i18n="map.load_map">Cargar mapa</span>
+            </span>
+        </div>
+        <iframe id="mapIframe" style="display:none;border:0;width:100%;height:450px;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de Lions Houses en Google Maps"></iframe>
     </div>
 
     <div class="map-info" data-aos="fade-left" data-aos-delay="300">
@@ -558,9 +585,9 @@
             </div>
 
             <div class="form-group" data-aos="fade-up" data-aos-delay="250">
-                <label class="form-label" data-i18n="contact.contact.form.messageLabel">Cuéntanos tus planes</label>
+                <label class="form-label" for="formMessage" data-i18n="contact.contact.form.messageLabel">Cuéntanos tus planes</label>
 
-                <textarea class="form-input form-textarea" name="message"
+                <textarea id="formMessage" class="form-input form-textarea" name="message"
                           
                           required></textarea>
             </div>
@@ -575,7 +602,8 @@
 </section>
 
 
-    
+    </main>
+
     <footer class="footer" data-aos="fade-up" data-aos-delay="100">
     <div class="footer-content">
 
@@ -687,7 +715,33 @@ document.addEventListener("click", e => {
     <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/features.js') }}" defer></script>   
     <script src="{{ url_for('static', filename='js/vecindario.js') }}" defer></script>  
-    <script src="{{ url_for('static', filename='js/modalContact.js') }}" defer></script>  
+    <script src="{{ url_for('static', filename='js/modalContact.js') }}" defer></script>
+
+    <script>
+    (function(){
+        var mapSrc = "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3934.8215598258594!2d-84.36957492812971!3d9.524227481046978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzEnMjcuMiJOIDg0wrAyMicwMS4yIlc!5e0!3m2!1ses!2scr!4v1771080601744!5m2!1ses!2scr";
+        var container = document.getElementById("mapContainer");
+        var placeholder = document.getElementById("mapPlaceholder");
+        var iframe = document.getElementById("mapIframe");
+        var loaded = false;
+        function loadMap() {
+            if (loaded) return;
+            loaded = true;
+            iframe.src = mapSrc;
+            iframe.style.display = "";
+            if (placeholder) placeholder.style.display = "none";
+        }
+        if (placeholder) {
+            placeholder.addEventListener("click", loadMap);
+        }
+        if ("IntersectionObserver" in window) {
+            var obs = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) { loadMap(); obs.disconnect(); }
+            }, { rootMargin: "200px" });
+            obs.observe(container);
+        }
+    })();
+    </script>
      
 </body>
 </html>

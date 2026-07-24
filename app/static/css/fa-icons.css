@@ -1,0 +1,27 @@
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:swap;src:url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2") format("woff2")}
+@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:swap;src:url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2") format("woff2")}
+.fa,.fas{font-family:"Font Awesome 6 Free";font-weight:900;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fab{font-family:"Font Awesome 6 Brands";font-weight:400;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fa-arrow-left:before{content:"\f060"}
+.fa-arrow-right:before{content:"\f061"}
+.fa-car:before{content:"\f1b9"}
+.fa-check:before{content:"\f00c"}
+.fa-chevron-down:before{content:"\f078"}
+.fa-chevron-left:before{content:"\f053"}
+.fa-chevron-right:before{content:"\f054"}
+.fa-cloud:before{content:"\f0c2"}
+.fa-coffee:before{content:"\f0f4"}
+.fa-crosshairs:before{content:"\f05b"}
+.fa-envelope:before{content:"\f0e0"}
+.fa-expand:before{content:"\f065"}
+.fa-external-link-alt:before{content:"\f35d"}
+.fa-map-marker-alt:before{content:"\f3c5"}
+.fa-moon:before{content:"\f186"}
+.fa-moped:before{content:"\e3b7"}
+.fa-play-circle:before{content:"\f144"}
+.fa-search-plus:before{content:"\f00e"}
+.fa-sun:before{content:"\f185"}
+.fa-utensils:before{content:"\f2e7"}
+.fa-video:before{content:"\f03d"}
+.fa-airbnb:before{content:"\f834"}
+.fa-whatsapp:before{content:"\f232"}

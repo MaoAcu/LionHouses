@@ -61,7 +61,7 @@ const i18n = {
         };
 
         const code = this.lang.toUpperCase();
-        selected.innerHTML = `<img src="${flagPath[this.lang]}"> <span>${code}</span>`;
+        selected.innerHTML = `<img src="${flagPath[this.lang]}" alt="${this.lang}"> <span>${code}</span>`;
     }
     // Traduce placeholders
 
@@ -76,7 +76,7 @@ selected.classList.add("lang-selected");
 
 // Iniciar según idioma guardado
 selected.innerHTML = `
-    <img src="${ES}">
+    <img src="${ES}" alt="${i18n.lang}">
     <span>${i18n.lang.toUpperCase()}</span>
 `;
 langSelector.prepend(selected);

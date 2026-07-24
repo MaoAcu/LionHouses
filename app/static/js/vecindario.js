@@ -39,10 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
         card.innerHTML = `
             <div class="card-media">
                 <div class="images-wrapper">
-                    <img src="${baseImg}${local.img1}" class="slide-img active"
+                    <img src="${baseImg}${local.img1}" class="slide-img active" alt="${local.nombre} - Foto 1"
                          onerror="this.src='https://placehold.co/400x300?text=Lion+Houses'">
 
-                    <img src="${baseImg}${local.img2}" class="slide-img"
+                    <img src="${baseImg}${local.img2}" class="slide-img" alt="${local.nombre} - Foto 2"
                          onerror="this.src='https://placehold.co/400x300?text=Local+Cercano'">
                 </div>
                 <div class="slider-dots">

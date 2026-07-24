@@ -48,7 +48,7 @@
 
     <!-- Estilos y Fuentes -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fa-icons.css') }}" crossorigin="anonymous"> 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
 </head>
 <body>
@@ -77,9 +77,9 @@
     <!-- Fallback de fotos para indexación de Googlebot sin JavaScript -->
     <noscript>
         <div class="gallery-grid">
-            <img src="{{ url_for('static', filename='images/gallery/Lions_Houses_f1.webp') }}" alt="Habitación principal Lions Houses">
-            <img src="{{ url_for('static', filename='images/gallery/Lions_Houses_f2.webp') }}" alt="Jardín y exteriores Lions Houses">
-            <img src="{{ url_for('static', filename='images/gallery/Lions_Houses_f3.webp') }}" alt="Cocina equipada Lions Houses">
+            <img src="{{ url_for('static', filename='images/gallery/Lions_Houses_f3.webp') }}" alt="Habitación principal Lions Houses">
+            <img src="{{ url_for('static', filename='images/gallery/Lions_Houses_f4.webp') }}" alt="Jardín y exteriores Lions Houses">
+            <img src="{{ url_for('static', filename='images/gallery/Lions_Houses_f5.webp') }}" alt="Cocina equipada Lions Houses">
         </div>
     </noscript>
 </div>

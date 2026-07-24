@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- Página Raíz (Animacion ) -->
-  <url>
-    <loc>https://lions-houses.com/</loc>
-    <lastmod>2026-07-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lions-houses.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lions-houses.com/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lions-houses.com/"/>
-  </url>
-  <!-- Página Inicio  -->
+  <!-- Pagina Principal -->
   <url>
     <loc>https://lions-houses.com/inicio</loc>
     <lastmod>2026-07-22</lastmod>
@@ -21,7 +11,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://lions-houses.com/inicio?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lions-houses.com/inicio"/>
   </url>
-  <!-- Galería Virtual -->
+  <!-- Galeria Virtual -->
   <url>
     <loc>https://lions-houses.com/Vgallery</loc>
     <lastmod>2026-07-22</lastmod>

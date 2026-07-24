@@ -64,7 +64,7 @@ class EmailService:
 
     def SendContactForm(self, name, email, subject, message, dates):
         try:
-            logo_url = "http://lions-houses.com/gallery/Lions_Logo.jpg"
+            logo_url = "https://lions-houses.com/static/images/Lions_Logo.webp"
             c_primary_light = "#F2E8DE"
             c_primary_dark = "#1A3A2A"
             c_accent_tan = "#E6D5C3"
@@ -72,8 +72,8 @@ class EmailService:
             c_text_light = "#F2E8DE"
 
             container_style = (
-                "max-width:600px;margin:20px auto;background:#ffffff;"
-                f"border:1px solid {c_accent_tan};border-radius:4px;"
+                "max-width:600px;margin:20px auto;"
+                f"border:1px solid {c_accent_tan};border-radius:4px;background:#F2E8DE;"
                 "font-family:'Segoe UI',Arial,sans-serif;"
             )
 
